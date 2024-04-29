@@ -599,6 +599,7 @@ input:focus {
 }
 
 .registration-trial-lesson-card-timestamp {
+    align-self: center;
     color: var(--dark-text, #252525);
     font-family: "Raleway";
     font-size: 18px;
