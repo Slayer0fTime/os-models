@@ -1,13 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap");
 
 :root {
     --white-text: #f3f3f3;
     --dark-text: #252525;
     --dark-bg-color: #252525;
-    --bg-color: #f3f3f3;
+    --bg-color: #ffffff;
     --header-height: 80px;
     --lavanda: #9b71b3;
+    --lavanda-2: #bca0cc;
     --lavanda-5: #e9dfee;
     --title-color: #c185e6;
 }
@@ -42,10 +44,13 @@ input:focus {
     outline: none;
 }
 
+svg {
+    flex-shrink: 0;
+}
+
 .roboto-font {
     font-family: "Roboto", sans-serif;
     font-weight: 300;
-    font-style: normal;
 }
 
 .site-header-container {
@@ -75,6 +80,11 @@ input:focus {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.header-content > img {
+    width: 68px;
+    height: 52px;
 }
 
 .header-nav {
@@ -112,12 +122,11 @@ input:focus {
     background-color: var(--dark-bg-color);
     padding: 10px 20px;
     border-radius: 12px;
+    font-size: 90px;
 }
 
 .title > span {
     display: flex;
-    font-family: "Raleway", sans-serif;
-    font-size: 90px;
     color: var(--title-color);
 }
 
@@ -146,7 +155,7 @@ input:focus {
 .section-content {
     display: flex;
     flex-direction: column;
-    gap: 76px;
+    gap: 46px;
 }
 
 .section-title {
@@ -155,12 +164,12 @@ input:focus {
     text-align: center;
 }
 
-.section-title h2 {
+.section-title > h2 {
     display: flex;
     padding: 10px;
     border-bottom: 2px solid var(--lavanda, #9b71b3);
     color: var(--dark-text);
-    font-family: Raleway;
+    font-family: "Raleway", sans-serif;
     font-size: 36px;
     font-style: normal;
     font-weight: 300;
@@ -171,6 +180,7 @@ input:focus {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 20px;
 }
 
 .programophone-section-video {
@@ -184,15 +194,16 @@ input:focus {
     justify-content: space-between;
     align-items: center;
     width: 400px;
-    height: 688px;
-    padding: 28px 20px 20px;
+    gap: 26px;
+    padding: 8px 8px 20px;
     border-radius: 16px;
-    background: var(--lavanda-3, #d3c0dd);
+    border: 4px solid var(--lavanda, #9b71b3);
 }
 
 .video-card-video {
-    height: 580px;
+    height: 600px;
     width: 100%;
+    border-radius: 8px;
     object-fit: cover;
 }
 
@@ -218,6 +229,7 @@ input:focus {
     border: 2px solid var(--lavanda, #9b71b3);
     border-radius: 8px;
 
+    text-align: left;
     color: var(--dark-text, #252525);
     font-family: "Raleway", sans-serif;
     font-size: 26px;
@@ -235,55 +247,80 @@ input:focus {
     fill: var(--white-text);
 }
 
+.programophone-section-type > svg {
+    width: 16px;
+    height: 16px;
+}
+
 .teachers-section-content {
-    display: grid;
-    grid-template-columns: repeat(2, max-content);
-    justify-content: space-between;
-    /* padding: 0px 76px; */
-    row-gap: 50px;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 25px;
+}
+
+.teacher-cards-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
 }
 
 .teacher-cards {
     display: grid;
-    grid-template-columns: repeat(2, minmax(200px, 282px));
+    grid-template-columns: repeat(3, minmax(140px, 176px));
     grid-template-rows: repeat(2, 1fr);
-    gap: 30px;
+    gap: 20px;
 }
 
 .teacher-card {
     display: flex;
     flex-direction: column;
-    border-radius: 8px;
+    border-radius: 6px;
     border: 2px solid var(--lavanda, #9b71b3);
     overflow: hidden;
 }
 
 .teacher-card > img {
-    width: 100%;
     height: 242px;
     object-fit: cover;
-    border-radius: 0 0 4px 4px;
 }
 
 .teacher-card-details {
     display: flex;
     flex-direction: column;
-    margin: 8px 12px 12px 12px;
+    gap: 4px;
+    padding: 10px 6px 6px;
     color: var(--dark-text);
 }
 
 .teacher-card-details-direction {
-    display: flex;
-    margin: 4px 0;
     font-size: 16px;
 }
 
 .teacher-card-details > h3 {
-    display: flex;
     font-style: normal;
     font-weight: 300;
     line-height: normal;
     font-size: 24px;
+}
+
+.teachers-section-photo-navigation {
+    display: flex;
+    gap: 36px;
+    color: var(--dark-text, #252525);
+    font-family: "Roboto", sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
+
+.prev-button,
+.next-button,
+.pagination {
+    display: flex;
+    align-items: center;
 }
 
 .teachers-section-description {
@@ -297,8 +334,8 @@ input:focus {
 
 .teachers-section-description-title {
     display: flex;
+    justify-content: center;
     align-items: center;
-    /* height: 60px; */
     padding: 12px 20px;
     border-radius: 4px;
     background-color: var(--lavanda);
@@ -317,7 +354,7 @@ input:focus {
     gap: 16px;
 }
 
-.teachers-section-description-content span {
+.teachers-section-description-content > span {
     display: flex;
     align-items: center;
     height: 36px;
@@ -325,18 +362,6 @@ input:focus {
     border-radius: 4px;
     border: 1.5px solid var(--lavanda);
     color: var(--dark-text, #252525);
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 300;
-    line-height: normal;
-}
-
-.teachers-section-photo-navigation {
-    justify-self: center;
-    display: flex;
-    gap: 36px;
-    color: var(--dark-text, #252525);
-    font-family: "Roboto", sans-serif;
     font-size: 24px;
     font-style: normal;
     font-weight: 300;
@@ -429,13 +454,11 @@ input:focus {
 .achievements-section-content > span {
     display: flex;
     align-items: center;
-    padding: 14px 24px;
-    border-radius: 8px;
-    background-color: var(--lavanda-5, #e9dfee);
-
+    padding: 8px 24px;
+    border-radius: 6px;
+    border: 2px solid var(--lavanda, #9b71b3);
     color: var(--dark-text, #252525);
     text-align: center;
-    font-family: "Raleway";
     font-size: 26px;
     font-style: normal;
     font-weight: 300;
@@ -507,7 +530,6 @@ input:focus {
 }
 
 .location-map {
-    display: flex;
     object-fit: cover;
     width: 100%;
     max-width: 700px;
@@ -526,22 +548,25 @@ input:focus {
 .location-details > p {
     padding: 14px 12px;
     border-radius: 8px;
-    background: var(--lavanda-5);
-
-    color: var(--dark-text, #252525);
-    font-family: "Raleway";
+    background: var(--lavanda-2, #bca0cc);
+    color: var(--white-text);
     font-size: 26px;
     font-style: normal;
-    font-weight: 200;
+    font-weight: 300;
     line-height: normal;
 }
 
 .registration-trial-lesson-container {
     display: flex;
+    gap: 40px;
+}
+
+.registration-trial-lesson {
+    display: flex;
     flex-direction: column;
     align-items: end;
     gap: 12px;
-    width: max-content;
+    /* width: max-content; */
 }
 
 .registration-trial-lesson-card {
@@ -566,13 +591,13 @@ input:focus {
     font-weight: 300;
 }
 
-.registration-trial-lesson-card-header > span {
+.registration-trial-lesson-card-header > b {
     display: flex;
     padding: 4px 12px;
     align-items: center;
     border-radius: 4px;
     background: var(--lavanda, #9b71b3);
-
+    font-family: "Inter", sans-serif;
     color: var(--white-text);
     font-size: 20px;
     font-style: normal;
@@ -645,6 +670,76 @@ input:focus {
     background-color: var(--lavanda, #9b71b3);
 }
 
+.trial-lesson-price-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 12px;
+}
+
+.trial-lesson-price-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.trial-lesson-price-card {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 282px;
+    padding: 12px 20px 12px 12px;
+
+    border-radius: 8px;
+    border: 2px solid var(--lavanda, #9b71b3);
+}
+
+.trial-lesson-price-card > h3 {
+    color: var(--dark-text);
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.price-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.price {
+    display: flex;
+    flex-direction: column;
+    color: var(--dark-text);
+    font-family: "Inter", sans-serif;
+}
+
+.original-price {
+    font-size: 1rem;
+    text-decoration-line: line-through;
+    opacity: 0.5;
+}
+
+.discounted-price {
+    font-size: 1.25rem;
+}
+
+.discount-info {
+    color: #7ed957;
+    font-family: "Roboto", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.trial-lesson-price-learn-more-button {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 20px;
+    border-radius: 4px;
+    border: 1.5px solid var(--lavanda);
+}
+
 .footer {
     display: flex;
     flex-direction: column;
@@ -652,8 +747,8 @@ input:focus {
     align-items: center;
     row-gap: 1rem;
     padding: 38px 20px 20px;
-    background: var(--dark-text, #252525);
-    color: #fff;
+    background: var(--dark-bg-color);
+    color: var(--white-text);
     font-family: "Roboto";
     font-size: 16px;
     font-style: normal;
@@ -685,13 +780,13 @@ input:focus {
 
 .copyright {
     text-align: center;
-    font-family: "Raleway";
     font-style: normal;
     font-weight: 400;
     line-height: normal;
 }
 
-@media (width < 1024px) {
+/*
+@media (max-width: 1024px) {
     .title > span {
         font-size: 80px;
     }
@@ -719,16 +814,14 @@ input:focus {
         padding-bottom: 14px;
     }
 
-    /* .programophone-section-types::-webkit-scrollbar {
+    .programophone-section-types::-webkit-scrollbar {
         height: 6px;
-        background-color: var(--lavanda)
+        background-color: var(--lavanda);
     }
 
     .programophone-section-types::-webkit-scrollbar-thumb {
-        border-radius: 10px;
         background-color: #252525;
-        height: 150%;        
-    } */
+    }
 
     .programophone-section-type {
         white-space: nowrap;
@@ -774,7 +867,7 @@ input:focus {
     }
 }
 
-@media (width < 768px) {
+@media (max-width: 768px) {
     .header-nav {
         display: none;
     }
@@ -920,8 +1013,9 @@ input:focus {
     }
 }
 
-@media (width < 480px) {
+@media (max-width: 480px) {
     .teacher-cards {
         grid-template-columns: minmax(200px, 282px);
     }
 }
+*/

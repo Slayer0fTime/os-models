@@ -1,0 +1,421 @@
+@media (max-width: 1024px) {
+    .header-content > img {
+        width: 52px;
+        height: 40px;
+    }
+
+    .title {
+        font-size: 72px;
+    }
+
+    .main {
+        gap: 100px;
+        margin-top: 100px;
+        margin-bottom: 60px;
+    }
+
+    .section-content {
+        gap: 40px;
+    }
+
+    .programophone-section-video-card {
+        width: 370px;
+        gap: 16px;
+    }
+
+    .programophone-section-content {
+        justify-content: space-evenly;
+    }
+
+    .teachers-section-content {
+        flex-direction: column;
+        gap: 100px;
+    }
+
+    .teachers-section-description {
+        width: auto;
+        align-items: center;
+    }
+
+    .teachers-section-description-content {
+        justify-content: center;
+    }
+
+    .teachers-section-description-title {
+        width: 230px;
+    }
+
+    .achievements-section-content {
+        gap: 20px;
+    }
+
+    .trial-lesson-card {
+        padding: 60px 30px;
+        gap: 20px;
+    }
+
+    .trial-lesson-event {
+        gap: 12px;
+    }
+
+    .location-section-content {
+        flex-direction: column;
+        align-self: center;
+    }
+
+    .location-map {
+        height: 320px;
+    }
+
+    .location-details {
+        align-self: flex-start;
+        align-items: flex-start;
+    }
+
+    .registration-trial-lesson-container {
+        flex-direction: column;
+    }
+
+    .trial-lesson-price-cards {
+        flex-direction: row;
+    }
+
+    .faq-section-content {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        height: 64px;
+    }
+
+    .header-nav {
+        display: none;
+    }
+
+    .burger-menu {
+        display: block;
+    }
+
+    .title {
+        font-size: 46px;
+    }
+
+    .main {
+        gap: 64px;
+        margin-top: 80px;
+    }
+
+    .programophone-section-content {
+        flex-direction: column-reverse;
+        align-items: normal;
+        gap: 24px;
+    }
+
+    .programophone-section-types {
+        width: auto;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px 20px;
+    }
+
+    .programophone-section-type {
+        min-width: 0;
+        padding: 12px;
+        font-size: 20px;
+    }
+
+    .programophone-section-type > span {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+
+    .teachers-section-content {
+        gap: 64px;
+    }
+
+    .teacher-cards-wrapper {
+        gap: 16px;
+    }
+
+    .teacher-cards {
+        gap: 10px;
+    }
+
+    .teacher-card > img {
+        height: 180px;
+    }
+
+    .teacher-card-details > h3 {
+        font-size: 18px;
+    }
+
+    .teachers-section-photo-navigation {
+        font-size: 16px;
+    }
+
+    .teachers-section-description-title {
+        width: 170px;
+        padding: 6px 0;
+        font-size: 22px;
+    }
+
+    .teachers-section-description-content > span {
+        font-size: 20px;
+    }
+
+    .achievements-section-content {
+        gap: 12px;
+    }
+
+    .achievements-section-content > span {
+        padding: 6px 12px;
+        border-radius: 8px;
+        border-width: 1.5px;
+        font-size: 20px;
+    }
+
+    .trial-lesson-card {
+        flex-direction: column;
+        padding: 0;
+        border: none;
+        border-radius: unset;
+    }
+
+    .trial-dates-card {
+        width: auto;
+        padding: 16px;
+        gap: 12px;
+    }
+
+    .trial-dates-card > h3 {
+        font-size: 22px;
+    }
+
+    .trial-dates {
+        font-size: 20px;
+        gap: 6px;
+    }
+
+    .trial-lesson-event > h3 {
+        font-size: 26px;
+    }
+
+    .trial-lesson-event-learn-more-btn {
+        width: auto;
+        padding: 8px 12px;
+        gap: 8px;
+        font-size: 16px;
+    }
+
+    .location-section-content {
+        gap: 8px;
+    }
+
+    .location-map {
+        height: 260px;
+    }
+
+    .location-details {
+        gap: 8px;
+    }
+
+    .location-details > p {
+        padding: 6px 12px;
+        font-size: 24px;
+    }
+
+    .registration-trial-lesson-card-header > h3 {
+        font-size: 24px;
+    }
+
+    .registration-trial-lesson-card-model-info {
+        gap: 20px;
+    }
+
+    .timestamp-buttons {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .trial-lesson-price-container {
+        display: none;
+    }
+
+    .faq-section-content {
+        gap: 12px;
+    }
+
+    .faq-card {
+        padding: 12px;
+        gap: 8px;
+    }
+
+    .faq-card-header > h3 {
+        font-size: 22px;
+    }
+
+    .faq-card-answer {
+        font-size: 16px;
+    }
+
+    .footer {
+        padding: 12px 20px;
+        font-size: 14px;
+    }
+
+    .footer svg {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-content > img {
+        width: 42px;
+        height: 34px;
+    }
+
+    .title {
+        font-size: 36px;
+    }
+
+    .header {
+        height: 52px;
+    }
+
+    .section-title > h2 {
+        font-size: 26px;
+    }
+
+    .section-content {
+        gap: 20px;
+    }
+
+    .programophone-section-types {
+        gap: 10px;
+    }
+
+    .programophone-section-type {
+        font-size: 16px;
+        padding: 8px 6px;
+    }
+
+    .programophone-section-type > svg {
+        width: 12px;
+        height: 12px;
+    }
+
+    .teachers-section-content {
+        gap: 40px;
+    }
+
+    .teacher-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .prev-button > svg,
+    .next-button > svg {
+        width: 25px;
+        height: 16px;
+    }
+
+    .teachers-section-description {
+        gap: 16px;
+    }
+
+    .teachers-section-description-title {
+        width: 152px;
+        padding: 4px 0;
+    }
+
+    .teachers-section-description-content > span {
+        height: 28px;
+        font-size: 16px;
+    }
+
+    .achievements-section-content > span {
+        font-size: 16px;
+    }
+
+    .trial-dates-card {
+        padding: 10px 12px;
+        gap: 8px;
+    }
+
+    .trial-dates-card > h3 {
+        font-size: 20px;
+    }
+
+    .trial-dates {
+        font-size: 18px;
+        gap: 2px;
+    }
+
+    .trial-lesson-event > h3 {
+        font-size: 22px;
+    }
+
+    .trial-lesson-event-learn-more-btn {
+        font-size: 14px;
+    }
+
+    .location-section-content,
+    .location-details {
+        gap: 4px;
+    }
+
+    .location-map {
+        height: 180px;
+    }
+
+    .location-details > p {
+        font-size: 18px;
+    }
+
+    .registration-trial-lesson-card {
+        gap: 20px;
+    }
+
+    .registration-trial-lesson-card-header > h3 {
+        font-size: 18px;
+    }
+
+    .registration-trial-lesson-card-header > b {
+        font-size: 14px;
+    }
+
+    .registration-trial-lesson-card-model-info > input {
+        font-size: 12px;
+    }
+
+    .registration-trial-lesson-card-timestamp {
+        font-size: 14px;
+    }
+
+    .timestamp-buttons {
+        align-items: center;
+    }
+
+    .timestamp-buttons > button {
+        font-size: 10px;
+    }
+
+    .registration-trial-lesson-button {
+        width: 150px;
+        font-size: 14px;
+        padding: 6px 0;
+    }
+
+    .faq-card-header > h3 {
+        font-size: 1rem;
+    }
+
+    .faq-card-answer {
+        font-size: 14px;
+    }
+}
