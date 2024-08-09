@@ -1,0 +1,50 @@
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    height: calc(100dvh - var(--header-height));
+    padding: 0 20px;
+}
+
+.model-age-group-card {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    border: 2px solid var(--lavanda, #9b71b3);
+    background: var(--lavanda-4, #ded0e6);
+}
+
+.model-age-group-card > img {
+    width: 130px;
+    height: 265px;
+    object-fit: cover;
+}
+
+.age-category-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    bottom: 0;
+    width: 170px;
+    height: 60px;
+    padding: 4px 10px;
+    border-radius: 8px 8px 0px 0px;
+    background: var(--Lavanda, #9b71b3);
+    color: var(--white-text);
+}
+
+.age-category-title {
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
+
+.age-category {
+    font-weight: 400;
+}
