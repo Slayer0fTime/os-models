@@ -1,0 +1,93 @@
+.main {
+    display: flex;
+    min-height: calc(100dvh - var(--header-height));
+    padding: 80px 0;
+}
+
+.section {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 0 20px;
+}
+
+.section-content {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+}
+
+.section-title {
+    align-self: center;
+    padding: 10px;
+    color: var(--dark-text, #252525);
+    border-bottom: 2px solid var(--lavanda, #9b71b3);
+    text-align: center;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 300;
+}
+
+.teacher-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* grid-auto-rows: 1fr; */
+    gap: 30px 20px;
+}
+
+.teacher-card {
+    display: flex;
+    overflow: hidden;
+    border-radius: 8px;
+    border: 2px solid var(--lavanda, #9b71b3);
+    /* height: fit-content;     */
+}
+
+.teacher-card-details {
+    display: flex;
+    flex-direction: column;
+    padding: 12px;
+    color: var(--dark-text, #252525);
+}
+
+.teacher-photo {
+    width: 180px;
+    object-fit: cover;
+}
+
+.teacher-full-name {
+    font-size: 24px;
+    font-weight: 400;
+    margin-bottom: 8px;
+}
+
+.teacher-bio {
+    font-size: 20px;
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+
+.teacher-specialty {
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 8px;
+}
+
+.specialty-description {
+    font-size: 18px;
+    font-weight: 300;
+    margin-bottom: 26px;
+}
+
+.teacher-social-icons {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-top: auto;
+}
+
+.teacher-social-icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
