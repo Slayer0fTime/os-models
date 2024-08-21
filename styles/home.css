@@ -591,7 +591,6 @@
     gap: 24px;
     width: 282px;
     padding: 12px 20px 12px 12px;
-
     border-radius: 8px;
     border: 2px solid var(--lavanda, #9b71b3);
 }
@@ -613,6 +612,7 @@
 .price {
     display: flex;
     flex-direction: column;
+    flex-shrink: 0;
     color: var(--dark-text);
     font-family: "Inter", sans-serif;
 }
@@ -629,9 +629,10 @@
 
 .discount-info {
     color: #7ed957;
-    font-family: "Roboto", sans-serif;
+    text-align: center;
     font-size: 18px;
     font-weight: 400;
+    
 }
 
 .trial-lesson-price-learn-more-button {

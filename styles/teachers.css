@@ -40,7 +40,7 @@
     overflow: hidden;
     border-radius: 8px;
     border: 2px solid var(--lavanda, #9b71b3);
-    /* height: fit-content;     */
+    /* height: fit-content; */
 }
 
 .teacher-card-details {

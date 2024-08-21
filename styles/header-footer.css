@@ -127,4 +127,8 @@
         width: 42px;
         height: 34px;
     }
+
+    .contact-icons {
+        gap: 0.5em;
+    }
 }

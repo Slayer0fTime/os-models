@@ -80,6 +80,11 @@
 
     .trial-lesson-price-cards {
         flex-direction: row;
+        width: 100%;
+    }
+
+    .trial-lesson-price-card {
+        width: 100%;
     }
 
     .faq-section-content {
@@ -198,7 +203,7 @@
         width: auto;
         padding: 8px 12px;
         gap: 8px;
-        font-size: 16px;
+        font-size: 1em;
     }
 
     .location-section-content {
@@ -214,8 +219,7 @@
     }
 
     .location-details > p {
-        padding: 6px 12px;
-        font-size: 24px;
+        font-size: 26px;
     }
 
     .registration-trial-lesson-card-header > h3 {
@@ -237,7 +241,18 @@
         padding: 4px 6px;
     }
 
-    .trial-lesson-price-container {
+    .trial-lesson-price-card {
+        padding: 12px 6px;
+        gap: 1em;
+        /* min-width: 210px; */
+    }
+
+    .discount-info {
+        font-size: 14px;
+    }
+
+    .trial-lesson-price-card > h3 {
+        font-size: 20px;
     }
 
     .faq-section-content {
@@ -392,6 +407,27 @@
         width: 150px;
         font-size: 14px;
         padding: 6px 0;
+    }
+
+    .trial-lesson-price-card {
+        padding: 4px 6px;
+        gap: 12px;
+    }
+
+    .trial-lesson-price-card > h3 {
+        font-size: 1em;
+    }
+
+    .original-price {
+        font-size: 12px;
+    }
+
+    .discounted-price {
+        font-size: 14px;
+    }
+
+    .discount-info {
+        font-size: 9px;
     }
 
     .faq-card-header > h3 {
