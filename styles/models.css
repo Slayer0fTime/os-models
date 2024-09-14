@@ -3,38 +3,53 @@
     justify-content: center;
     align-items: center;
     gap: 30px;
-    height: calc(100dvh - var(--header-height));
-    padding: 0 20px;
+    min-height: calc(100dvh - var(--header-height));
+    padding: 28px 20px;
+}
+
+.model-age-group-cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
 }
 
 .model-age-group-card {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     position: relative;
-    overflow: hidden;
     border-radius: 8px;
     border: 2px solid var(--lavanda, #9b71b3);
     background: var(--lavanda-4, #ded0e6);
+    overflow: hidden;
+    max-width: 386px;
+    height: 265px;
 }
 
 .model-age-group-card > img {
-    width: 130px;
-    height: 265px;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
 }
 
+.model-age-group-card > img:nth-of-type(2) {
+    border-left: 1.5px dashed var(--Lavanda, #9b71b3);
+    border-right: 1.5px dashed var(--Lavanda, #9b71b3);
+}
+
 .age-category-card {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
     position: absolute;
     bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 170px;
-    height: 60px;
+    /* height: 60px; */
     padding: 4px 10px;
     border-radius: 8px 8px 0px 0px;
-    background: var(--Lavanda, #9b71b3);
+    background: var(--lavanda, #9b71b3);
     color: var(--white-text);
 }
 
@@ -47,4 +62,40 @@
 
 .age-category {
     font-weight: 400;
+}
+
+@media (max-width: 1024px) {
+    .model-age-group-cards {
+        gap: 20px;
+    }
+    .age-category-card {
+        width: 144px;
+    }
+    .age-category-title {
+        font-size: 20px;
+    }
+    .age-category {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 768px) {
+    .model-age-group-card {
+        height: 240px;
+    }
+    .age-category-card {
+        width: 134px;
+    }
+    .age-category-title {
+        font-size: 18px;
+    }
+    .age-category {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .model-age-group-card {
+        height: 180px;
+    }
 }

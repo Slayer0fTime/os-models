@@ -40,7 +40,7 @@
     overflow: hidden;
     border-radius: 8px;
     border: 2px solid var(--lavanda, #9b71b3);
-    /* height: fit-content; */
+    /* height: fit-content;  */
 }
 
 .teacher-card-details {
@@ -52,6 +52,7 @@
 
 .teacher-photo {
     width: 180px;
+    /* flex-shrink: 0; */
     object-fit: cover;
 }
 
@@ -86,7 +87,7 @@
     margin-top: auto;
 }
 
-.teacher-social-icon{
+.teacher-social-icon {
     display: flex;
     justify-content: center;
     align-items: center;
