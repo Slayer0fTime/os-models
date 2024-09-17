@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const screenWidth = 480
         return window.innerWidth <= screenWidth ? 4 : 6;
     }
-    
+
     function showPage(page) {
         const startIndex = (page - 1) * cardsPerPage;
         const endIndex = startIndex + cardsPerPage;
@@ -53,3 +53,14 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+
+
+function showSidebar() {
+    const sidebar = document.querySelector('.sidebar')
+    sidebar.style.display = 'block'
+}
+
+function hideSidebar() {
+    const sidebar = document.querySelector('.sidebar')
+    sidebar.style.display = 'none' 
+}
