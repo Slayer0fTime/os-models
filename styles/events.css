@@ -60,6 +60,8 @@
 }
 
 .event-card {
+    display: flex;
+    flex-direction: column;
     border-radius: 8px;
     border: 2px solid var(--lavanda, #9b71b3);
     overflow: hidden;
@@ -72,8 +74,11 @@
 }
 
 .event-card-details {
-    color: var(--dark-text);
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
     padding: 10px;
+    color: var(--dark-text);
 }
 
 .event-title {
@@ -89,6 +94,67 @@
 }
 
 .event-date {
+    margin-top: auto;
     font-size: 1rem;
     font-weight: 200;
+}
+
+@media (max-width: 1024px) {
+    .main {
+        padding: 60px 20px 40px;
+    }
+    .event-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+    .event-image {
+        height: 246px;
+    }
+    .event-card-details {
+        padding: 6px;
+    }
+    .event-title {
+        font-size: 22px;
+    }
+
+}
+
+@media (max-width: 768px) {
+    .main {
+        padding: 40px 20px;
+    }
+    .event-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    .event-title {
+        font-size: 20px;
+    }
+    .event-description {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .main {
+        padding: 28px 20px 20px;
+    }
+    .section-title {
+        margin-bottom: 20px;
+        font-size: 26px;
+    }
+    .filters {
+        flex-direction: column;
+        align-items: baseline;
+        gap: 1rem;
+        margin-bottom: 42px;
+    }
+    .event-title {
+        margin-bottom: 4px;
+    }
+    .event-description {
+        margin-bottom: 8px;
+    }
+    .event-date {
+        font-size: 14px;
+    }
 }
