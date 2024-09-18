@@ -5,8 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>OS models</title>
         <link rel="stylesheet" href="../styles/style.css" />
-        <link rel="stylesheet" href="../styles/models.css" />
-        <script src="../scripts/script.js"></script>
+        <link rel="stylesheet" href="../styles/events.css" />
+        <script src="../scripts/script.js" defer></script>
     </head>
 
     <body>
@@ -16,9 +16,9 @@
                 <nav>
                     <ul>
                         <li><a href="../">Головна</a></li>
-                        <li><a href="./" class="selected"> Моделі </a></li>
+                        <li><a href="../models/">Моделі</a></li>
                         <li><a href="../teachers/">Викладачі</a></li>
-                        <li><a href="../events/">Події</a></li>
+                        <li><a href="./" class="selected">Події</a></li>
                         <li><a href="#">Ціни</a></li>
                         <li><a href="#">Контакти</a></li>
                     </ul>
@@ -57,9 +57,9 @@
                         </button>
                         <ul>
                             <li><a href="../">Головна</a></li>
-                            <li><a href="./" class="selected"> Моделі </a></li>
+                            <li><a href="../models/">Моделі</a></li>
                             <li><a href="../teachers/">Викладачі</a></li>
-                            <li><a href="../events/">Події</a></li>
+                            <li><a href="./">Події</a></li>
                             <li><a href="#">Ціни</a></li>
                             <li><a href="#">Контакти</a></li>
                         </ul>
@@ -69,58 +69,152 @@
         </header>
 
         <main class="main">
-            <section class="model-age-group-cards">
-                <a href="our-models/" class="model-age-group-card">
-                    <img
-                        src="../images/model-photo-models.jpg"
-                        alt="model-photo" />
-                    <img
-                        src="../images/model-photo-models-2.jpg"
-                        alt="model-photo" />
-                    <img
-                        src="../images/model-photo-models.jpg"
-                        alt="model-photo" />
-                    <div class="age-category-card">
-                        <h2 class="age-category-title">Kids</h2>
-                        <p class="age-category">
-                            <span class="roboto-font">5 - 8</span> років
-                        </p>
+            <section class="section container">
+                <h2 class="section-title">Події нашої академії</h2>
+                <div class="filters">
+                    <button class="sort-by-date-button">
+                        Дата публікації
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="9"
+                            height="17"
+                            viewBox="0 0 9 17"
+                            fill="none">
+                            <path
+                                fill-rule="evenodd"
+                                clip-rule="evenodd"
+                                d="M4.5 -3.93403e-07C4.36741 -4.04994e-07 4.24025 0.0639606 4.1465 0.177816C4.05274 0.291669 4.00007 0.446088 4.00007 0.607103L4.00007 14.9263L0.854511 11.1051C0.760637 10.9911 0.633317 10.9271 0.50056 10.9271C0.367803 10.9271 0.240483 10.9911 0.14661 11.1051C0.0527358 11.2191 -1.41549e-06 11.3738 -1.42958e-06 11.535C-1.44368e-06 11.6962 0.0527358 11.8508 0.14661 11.9648L4.14605 16.8216C4.19249 16.8782 4.24766 16.923 4.30839 16.9536C4.36913 16.9842 4.43424 17 4.5 17C4.56576 17 4.63087 16.9842 4.69161 16.9536C4.75234 16.923 4.80751 16.8782 4.85395 16.8216L8.85339 11.9648C8.89987 11.9084 8.93674 11.8414 8.9619 11.7676C8.98705 11.6939 9 11.6148 9 11.535C9 11.3738 8.94726 11.2191 8.85339 11.1051C8.75952 10.9911 8.6322 10.9271 8.49944 10.9271C8.36668 10.9271 8.23936 10.9911 8.14549 11.1051L4.99993 14.9263L4.99993 0.607103C4.99993 0.446088 4.94726 0.291669 4.8535 0.177816C4.75975 0.0639607 4.63259 -3.81811e-07 4.5 -3.93403e-07Z"
+                                fill="#9B71B3" />
+                        </svg>
+                    </button>
+                    <div class="filter-event-type">
+                        <button class="event-type-btn">Покази</button>
+                        <button class="event-type-btn active">
+                            Фотопроекти
+                        </button>
                     </div>
-                </a>
-                <a href="our-models/" class="model-age-group-card">
-                    <img
-                        src="../images/model-photo-models.jpg"
-                        alt="model-photo" />
-                    <img
-                        src="../images/model-photo-models.jpg"
-                        alt="model-photo" />
-                    <img
-                        src="../images/model-photo-models.jpg"
-                        alt="model-photo" />
-                    <div class="age-category-card">
-                        <h2 class="age-category-title">Juniors</h2>
-                        <p class="age-category">
-                            <span class="roboto-font">9 - 12</span> років
-                        </p>
-                    </div>
-                </a>
-                <a href="our-models/" class="model-age-group-card">
-                    <img
-                        src="../images/model-photo-models.jpg"
-                        alt="model-photo" />
-                    <img
-                        src="../images/model-photo-models.jpg"
-                        alt="model-photo" />
-                    <img
-                        src="../images/model-photo-models.jpg"
-                        alt="model-photo" />
-                    <div class="age-category-card">
-                        <h2 class="age-category-title">Teens</h2>
-                        <p class="age-category">
-                            <span class="roboto-font">13 - 17</span> років
-                        </p>
-                    </div>
-                </a>
+                </div>
+
+                <div class="event-grid">
+                    <a href="#" class="event-card">
+                        <img
+                            src="../images/event.png"
+                            alt="Event photo"
+                            class="event-image" />
+                        <div class="event-card-details">
+                            <h3 class="event-title">Веснянний показ</h3>
+                            <p class="event-description">
+                                Сьогодні був наш 5 показ, в якому брали участь
+                                усі вікові групи
+                            </p>
+                            <span class="event-date roboto-font"
+                                >09.02.2024</span
+                            >
+                        </div>
+                    </a>
+
+                    <a href="#" class="event-card">
+                        <img
+                            src="../images/event-2.png"
+                            alt="Event photo"
+                            class="event-image" />
+                        <div class="event-card-details">
+                            <h3 class="event-title">Веснянний показ</h3>
+                            <p class="event-description">
+                                Сьогодні був наш 5 показ, в якому брали участь
+                                усі вікові групи
+                            </p>
+                            <span class="event-date roboto-font"
+                                >09.02.2024</span
+                            >
+                        </div>
+                    </a>
+
+                    <a href="#" class="event-card">
+                        <img
+                            src="../images/event.png"
+                            alt="Event photo"
+                            class="event-image" />
+                        <div class="event-card-details">
+                            <h3 class="event-title">Веснянний показ</h3>
+                            <p class="event-description">
+                                Сьогодні був наш 5 показ, в якому брали участь
+                                усі вікові групи
+                            </p>
+                            <span class="event-date roboto-font"
+                                >09.02.2024</span
+                            >
+                        </div>
+                    </a>
+
+                    <a href="#" class="event-card">
+                        <img
+                            src="../images/event.png"
+                            alt="Event photo"
+                            class="event-image" />
+                        <div class="event-card-details">
+                            <h3 class="event-title">Веснянний показ</h3>
+                            <p class="event-description">
+                                Сьогодні був наш 5 показ, в якому брали участь
+                                усі вікові групи
+                            </p>
+                            <span class="event-date roboto-font"
+                                >09.02.2024</span
+                            >
+                        </div>
+                    </a>
+
+                    <a href="#" class="event-card">
+                        <img
+                            src="../images/event.png"
+                            alt="Event photo"
+                            class="event-image" />
+                        <div class="event-card-details">
+                            <h3 class="event-title">Веснянний показ</h3>
+                            <p class="event-description">
+                                Сьогодні був наш 5 показ, в якому брали участь
+                                усі вікові групи
+                            </p>
+                            <span class="event-date roboto-font"
+                                >09.02.2024</span
+                            >
+                        </div>
+                    </a>
+
+                    <a href="#" class="event-card">
+                        <img
+                            src="../images/event.png"
+                            alt="Event photo"
+                            class="event-image" />
+                        <div class="event-card-details">
+                            <h3 class="event-title">Веснянний показ</h3>
+                            <p class="event-description">
+                                Сьогодні був наш 5 показ, в якому брали участь
+                                усі вікові групи
+                            </p>
+                            <span class="event-date roboto-font"
+                                >09.02.2024</span
+                            >
+                        </div>
+                    </a>
+
+                    <a href="#" class="event-card">
+                        <img
+                            src="../images/event.png"
+                            alt="Event photo"
+                            class="event-image" />
+                        <div class="event-card-details">
+                            <h3 class="event-title">Веснянний показ</h3>
+                            <p class="event-description">
+                                Сьогодні був наш 5 показ, в якому брали участь
+                                усі вікові групи
+                            </p>
+                            <span class="event-date roboto-font"
+                                >09.02.2024</span
+                            >
+                        </div>
+                    </a>
+                </div>
             </section>
         </main>
 

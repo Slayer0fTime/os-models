@@ -54,8 +54,9 @@ svg {
 }
 
 .container {
-    width: 100%;
-    max-width: 1218px;
+    /* width: 100%; */
+    /* max-width: 1218px; */
+    width: min(100%, 1218px);
 }
 
 .roboto-font {
