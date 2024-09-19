@@ -620,7 +620,7 @@
 .original-price {
     font-size: 1rem;
     text-decoration-line: line-through;
-    opacity: 0.5;
+    color: #7b7b7b;
 }
 
 .discounted-price {
