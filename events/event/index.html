@@ -4,21 +4,21 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>OS models</title>
-        <link rel="stylesheet" href="../styles/style.css" />
-        <link rel="stylesheet" href="../styles/events.css" />
-        <script src="../scripts/script.js" defer></script>
+        <link rel="stylesheet" href="/styles/style.css" />
+        <link rel="stylesheet" href="/styles/event.css" />
+        <script src="/scripts/script.js" defer></script>
     </head>
 
     <body>
         <header class="header">
             <div class="container header-content">
-                <img src="../images/logo.svg" />
+                <img src="/images/logo.svg" />
                 <nav>
                     <ul>
-                        <li><a href="../">Головна</a></li>
-                        <li><a href="../models/">Моделі</a></li>
-                        <li><a href="../teachers/">Викладачі</a></li>
-                        <li><a href="./" class="selected">Події</a></li>
+                        <li><a href="/">Головна</a></li>
+                        <li><a href="/models">Моделі</a></li>
+                        <li><a href="/teachers">Викладачі</a></li>
+                        <li><a href="/events" class="selected">Події</a></li>
                         <li><a href="#">Ціни</a></li>
                         <li><a href="#">Контакти</a></li>
                     </ul>
@@ -56,10 +56,12 @@
                             </svg>
                         </button>
                         <ul>
-                            <li><a href="../">Головна</a></li>
-                            <li><a href="../models/">Моделі</a></li>
-                            <li><a href="../teachers/">Викладачі</a></li>
-                            <li><a href="./">Події</a></li>
+                            <li><a href="/">Головна</a></li>
+                            <li><a href="/models">Моделі</a></li>
+                            <li><a href="/teachers">Викладачі</a></li>
+                            <li>
+                                <a href="/events" class="selected">Події</a>
+                            </li>
                             <li><a href="#">Ціни</a></li>
                             <li><a href="#">Контакти</a></li>
                         </ul>
@@ -70,152 +72,42 @@
 
         <main class="main">
             <section class="section container">
-                <h2 class="section-title">Події нашої академії</h2>
-                <div class="filters">
-                    <button class="sort-by-date-button">
-                        Дата публікації
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="9"
-                            height="17"
-                            viewBox="0 0 9 17"
-                            fill="none">
-                            <path
-                                fill-rule="evenodd"
-                                clip-rule="evenodd"
-                                d="M4.5 -3.93403e-07C4.36741 -4.04994e-07 4.24025 0.0639606 4.1465 0.177816C4.05274 0.291669 4.00007 0.446088 4.00007 0.607103L4.00007 14.9263L0.854511 11.1051C0.760637 10.9911 0.633317 10.9271 0.50056 10.9271C0.367803 10.9271 0.240483 10.9911 0.14661 11.1051C0.0527358 11.2191 -1.41549e-06 11.3738 -1.42958e-06 11.535C-1.44368e-06 11.6962 0.0527358 11.8508 0.14661 11.9648L4.14605 16.8216C4.19249 16.8782 4.24766 16.923 4.30839 16.9536C4.36913 16.9842 4.43424 17 4.5 17C4.56576 17 4.63087 16.9842 4.69161 16.9536C4.75234 16.923 4.80751 16.8782 4.85395 16.8216L8.85339 11.9648C8.89987 11.9084 8.93674 11.8414 8.9619 11.7676C8.98705 11.6939 9 11.6148 9 11.535C9 11.3738 8.94726 11.2191 8.85339 11.1051C8.75952 10.9911 8.6322 10.9271 8.49944 10.9271C8.36668 10.9271 8.23936 10.9911 8.14549 11.1051L4.99993 14.9263L4.99993 0.607103C4.99993 0.446088 4.94726 0.291669 4.8535 0.177816C4.75975 0.0639607 4.63259 -3.81811e-07 4.5 -3.93403e-07Z"
-                                fill="#9B71B3" />
-                        </svg>
-                    </button>
-                    <div class="filter-event-type">
-                        <button class="event-type-btn">Покази</button>
-                        <button class="event-type-btn active">
-                            Фотопроекти
-                        </button>
+                <h2 class="section-title">Веснянний показ</h2>
+                <div class="event-container">
+                    <img
+                        src="/images/event-2.png"
+                        alt="Event photo"
+                        class="event-image" />
+                    <div class="event-info">
+                        <p class="event-description">
+                            Lorem ipsum, dolor sit amet consectetur adipisicing
+                            elit. Mollitia doloremque ex quibusdam cupiditate
+                            sequi. Atque tempora consectetur fuga modi
+                            cupiditate magnam deserunt beatae praesentium
+                            voluptates quam, tempore adipisci omnis culpa quia
+                            suscipit sit vel explicabo corrupti ea. Cumque
+                            recusandae aliquam vero! Obcaecati culpa veniam
+                            nihil eius numquam, impedit nam dignissimos. Lorem
+                            ipsum dolor sit amet consectetur adipisicing elit.
+                            Tempora, iste. Vero fugiat excepturi provident
+                            accusantium assumenda voluptatibus voluptates
+                            cupiditate laboriosam, iusto delectus earum sit non
+                            corrupti recusandae laudantium perspiciatis
+                            doloribus!
+                        </p>
+                        <span class="event-date roboto-font">09.02.2024</span>
                     </div>
                 </div>
-
-                <div class="event-grid">
-                    <a href="./event/" class="event-card">
-                        <img
-                            src="/images/event.png"
-                            alt="Event photo"
-                            class="event-image" />
-                        <div class="event-card-details">
-                            <h3 class="event-title">Веснянний показ</h3>
-                            <p class="event-description">
-                                Сьогодні був наш 5 показ, в якому брали участь
-                                усі вікові групи
-                            </p>
-                            <span class="event-date roboto-font"
-                                >09.02.2024</span
-                            >
-                        </div>
-                    </a>
-
-                    <a href="./event/" class="event-card">
-                        <img
-                            src="../images/event-2.png"
-                            alt="Event photo"
-                            class="event-image" />
-                        <div class="event-card-details">
-                            <h3 class="event-title">
-                                Раз і два і три та чотири показ
-                            </h3>
-                            <p class="event-description">
-                                Сьогодні був наш 5 показ, в якому брали участь
-                                усі вікові групи
-                            </p>
-                            <span class="event-date roboto-font"
-                                >09.02.2024</span
-                            >
-                        </div>
-                    </a>
-
-                    <a href="./event/" class="event-card">
-                        <img
-                            src="../images/event.png"
-                            alt="Event photo"
-                            class="event-image" />
-                        <div class="event-card-details">
-                            <h3 class="event-title">Веснянний показ</h3>
-                            <p class="event-description">
-                                Сьогодні був наш 5 показ, в якому брали участь
-                                усі вікові групи
-                            </p>
-                            <span class="event-date roboto-font"
-                                >09.02.2024</span
-                            >
-                        </div>
-                    </a>
-
-                    <a href="./event/" class="event-card">
-                        <img
-                            src="../images/event.png"
-                            alt="Event photo"
-                            class="event-image" />
-                        <div class="event-card-details">
-                            <h3 class="event-title">Веснянний показ</h3>
-                            <p class="event-description">
-                                Сьогодні був наш 5 показ, в якому брали участь
-                                усі вікові групи
-                            </p>
-                            <span class="event-date roboto-font"
-                                >09.02.2024</span
-                            >
-                        </div>
-                    </a>
-
-                    <a href="./event/" class="event-card">
-                        <img
-                            src="../images/event.png"
-                            alt="Event photo"
-                            class="event-image" />
-                        <div class="event-card-details">
-                            <h3 class="event-title">Веснянний показ</h3>
-                            <p class="event-description">
-                                Сьогодні був наш 5 показ, в якому брали участь
-                                усі вікові групи
-                            </p>
-                            <span class="event-date roboto-font"
-                                >09.02.2024</span
-                            >
-                        </div>
-                    </a>
-
-                    <a href="./event/" class="event-card">
-                        <img
-                            src="../images/event.png"
-                            alt="Event photo"
-                            class="event-image" />
-                        <div class="event-card-details">
-                            <h3 class="event-title">Веснянний показ</h3>
-                            <p class="event-description">
-                                Сьогодні був наш 5 показ, в якому брали участь
-                                усі вікові групи
-                            </p>
-                            <span class="event-date roboto-font"
-                                >09.02.2024</span
-                            >
-                        </div>
-                    </a>
-
-                    <a href="./event/" class="event-card">
-                        <img
-                            src="../images/event.png"
-                            alt="Event photo"
-                            class="event-image" />
-                        <div class="event-card-details">
-                            <h3 class="event-title">Веснянний показ</h3>
-                            <p class="event-description">
-                                Сьогодні був наш 5 показ, в якому брали участь
-                                усі вікові групи
-                            </p>
-                            <span class="event-date roboto-font"
-                                >09.02.2024</span
-                            >
-                        </div>
-                    </a>
+                <h3 class="event-gallery-title">Фототека</h3>
+                <div class="event-gallery">
+                    <img src="/images/event-2.png" alt="Event photo" />
+                    <img src="/images/event.png" alt="Event photo" />
+                    <img src="/images/event.png" alt="Event photo" />
+                    <img src="/images/event.png" alt="Event photo" />
+                    <img src="/images/event.png" alt="Event photo" />
+                    <img src="/images/event.png" alt="Event photo" />
+                    <img src="/images/event.png" alt="Event photo" />
+                    <img src="/images/event.png" alt="Event photo" />
                 </div>
             </section>
         </main>
