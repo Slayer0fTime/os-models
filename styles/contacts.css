@@ -15,3 +15,55 @@
     font-size: 36px;
     font-weight: 300;
 }
+
+.contacts-section-container {
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.location-container {
+    display: flex;
+    align-items: center;
+    gap: 70px;
+}
+
+.location-map {
+    object-fit: cover;
+    width: 700px;
+    height: 372px;
+    border-radius: 8px;
+    border: 4px solid var(--lavanda, #9b71b3);
+}
+
+.location-address {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 20px;
+    text-align: right;
+    word-break: break-word;
+    font-size: 32px;
+    font-weight: 500;
+}
+
+.contacts-info {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-top: 8px;    
+    font-size: 18px;
+}
+
+.contact-phone-number {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.contact-email {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: var(--lavanda, #9B71B3);
+    font-weight: 400;
+}
