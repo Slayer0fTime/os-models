@@ -50,20 +50,71 @@
     display: flex;
     align-items: center;
     gap: 40px;
-    margin-top: 8px;    
+    margin-top: 8px;
     font-size: 18px;
+    word-break: break-word;
 }
 
 .contact-phone-number {
     display: flex;
     align-items: center;
     gap: 8px;
+    color: var(--dark-text, #252525);
 }
 
 .contact-email {
     display: flex;
     align-items: center;
     gap: 4px;
-    color: var(--lavanda, #9B71B3);
+    color: var(--lavanda, #9b71b3);
     font-weight: 400;
+}
+
+@media (max-width: 1024px) {
+    .main {
+        padding: 60px 20px 40px;
+    }
+    .section-title {
+        margin-bottom: 34px;
+    }
+    .location-container {
+        flex-direction: column-reverse;
+        align-items: baseline;
+        gap: 20px;
+    }
+    .location-address {
+        align-items: baseline;
+        text-align: left;
+        font-size: 28px;
+    }
+}
+@media (max-width: 768px) {
+    .main {
+        padding: 40px 20px;
+    }
+    .location-container {
+        gap: 12px;
+    }
+    .location-address {
+        gap: 8px;
+        font-size: 22px;
+    }
+    .location-map {
+        width: 100%;
+        height: 294px;
+    }
+    .contacts-info {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .main {
+        padding: 28px 20px 20px;
+    }
+    .location-container {
+        gap: 10px;
+    }
 }
