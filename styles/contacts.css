@@ -114,6 +114,9 @@
     .main {
         padding: 28px 20px 20px;
     }
+    .section-title {
+        font-size: 26px;
+    }
     .location-container {
         gap: 10px;
     }
