@@ -12,6 +12,7 @@
     --lavanda-2: #bca0cc;
     --lavanda-5: #e9dfee;
     --title-color: #c185e6;
+    --light-green: #7ed957;
 }
 
 * {
@@ -20,7 +21,7 @@
     box-sizing: border-box;
 }
 
-ul {
+ul, li {
     list-style: none;
 }
 
@@ -61,5 +62,10 @@ svg {
 
 .roboto-font {
     font-family: "Roboto", sans-serif;
+    font-weight: 300;
+}
+
+.inter-font {
+    font-family: "Inter", sans-serif;
     font-weight: 300;
 }
