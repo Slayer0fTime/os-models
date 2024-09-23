@@ -23,6 +23,7 @@
 }
 
 .age-category {
+    width: 100%;
     grid-column: 2/-1;
     display: flex;
     justify-content: center;
@@ -264,6 +265,7 @@
 .single-session-price-and-registration {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .single-session-price-and-registration span {
@@ -282,4 +284,100 @@
     color: var(--dark-text, #252525);
     font-size: 1rem;
     font-weight: 400;
+}
+
+@media (max-width: 1024px) {
+    .main {
+        padding: 60px 20px 40px;
+    }
+    .section-title {
+        margin-bottom: 36px;
+    }
+    .prices-grid {
+        grid-template-columns: repeat(2, auto);
+    }
+    .age-category {
+        grid-column: 1/-1;
+    }
+    .trial-lesson-container {
+        order: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .main {
+        padding: 40px 20px;
+    }
+    .prices-grid {
+        grid-template-columns: auto;
+        justify-items: center;
+        gap: 16px;
+        max-width: 386px;
+        margin: 0 auto;
+    }
+    .age-category {
+        font-size: 18px;
+        margin-bottom: 4px;
+    }
+    .subscription-card h3 {
+        font-size: 22px;
+    }
+    .subscription-card-price-and-registration span {
+        font-size: 18px;
+    }
+    .payment-card > h3 {
+        font-size: 22px;
+    }
+    .original-price {
+        font-size: 14px;
+    }
+    .discounted-price {
+        font-size: 18px;
+    }
+    .payment-card-single-session h3 {
+        font-size: 22px;
+    }
+    .single-session-price-and-registration span {
+        font-size: 18px;
+    }
+    .trial-lesson-card-header h3 {
+        font-size: 22px;
+    }
+}
+@media (max-width: 480px) {
+    .main {
+        padding: 28px 20px 20px;
+    }
+    .subscription-card {
+        padding: 8px;
+    }
+    .subscription-card h3 {
+        font-size: 20px;
+        margin-bottom: 6px;
+    }
+    .subscription-card ul > li {
+        font-size: 1rem;
+    }
+    .subscription-card ul > li:last-child {
+        font-size: 14px;
+    }
+    .subscription-card-price-and-registration a,
+    .single-session-price-and-registration a,
+    .trial-lesson-card-info a {
+        width: 144px;
+        height: 26px;
+        font-size: 14px;
+    }
+    .payment-card > h3 {
+        font-size: 20px;
+    }
+    .payment-card-single-session h3 {
+        font: 20px;
+    }
+    .trial-lesson-card-header h3 {
+        font-size: 20px;
+    }
+    .trial-lesson-card-header strong {
+        font-size: 1rem;
+    }
 }
