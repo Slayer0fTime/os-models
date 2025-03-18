@@ -1,4 +1,41 @@
-export const modelsByAgeGroup = {
+export const ageGroups = [
+  {
+    name: 'kids',
+    range: '5 - 8',
+    images: ['/models/kids1.jpg', '/models/kids2.jpg', '/models/kids1.jpg'],
+  },
+  {
+    name: 'juniors',
+    range: '9 - 12',
+    images: ['/models/kids1.jpg', '/models/kids1.jpg', '/models/kids1.jpg'],
+  },
+  {
+    name: 'teens',
+    range: '13 - 17',
+    images: ['/models/kids2.jpg', '/models/kids2.jpg', '/models/kids2.jpg'],
+  },
+];
+
+interface Model {
+  id: string;
+  name: string;
+  age: number;
+  height: number;
+  chest: number;
+  waist: number;
+  hips: number;
+  image: string;
+  gallery: string[];
+  gender: 'male' | 'female';
+}
+
+interface ModelsByAgeGroup {
+  kids: Model[];
+  juniors: Model[];
+  teens: Model[];
+}
+
+export const modelsByAgeGroup: ModelsByAgeGroup = {
   kids: [
     {
       id: '1',

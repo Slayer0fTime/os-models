@@ -1,6 +1,7 @@
 import SocialIcon from './social-icon';
 import styles from './teachers.module.css';
 import Image from 'next/image';
+import {Teacher} from '@/app/lib/data/teachers'
 
 interface TeacherProps {
   image: string;

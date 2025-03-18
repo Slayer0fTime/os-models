@@ -1,7 +1,7 @@
 'use client';
 
 import styles from '@/app/ui/events/events.module.css';
-import { events } from './data';
+import { events } from '@/app/lib/data/events';
 import Link from 'next/link';
 import Image from 'next/image';
 import { roboto } from '../fonts';

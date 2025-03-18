@@ -1,4 +1,14 @@
-export const teachers = [
+export interface Teacher {
+  image: string;
+  fullName: string;
+  bio: string;
+  speciality: string;
+  specialityDescription: string;
+  instagram: string;
+  facebook: string;
+}
+
+export const teachers: Teacher[] = [
   {
     image: '/teachers/teacher1.jpg',
     fullName: 'Вікторія Іванівна',

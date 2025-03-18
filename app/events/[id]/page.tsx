@@ -1,4 +1,4 @@
-import { getEventById } from '@/app/ui/events/data';
+import { getEventById } from '@/app/lib/data/events';
 import styles from '@/app/ui/events/event.module.css';
 import { roboto } from '@/app/ui/fonts';
 import Image from 'next/image';

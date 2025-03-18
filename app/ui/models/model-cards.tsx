@@ -1,7 +1,7 @@
 'use client';
 
 import { notFound, useSearchParams } from 'next/navigation';
-import { modelsByAgeGroup } from './data';
+import { modelsByAgeGroup } from '@/app/lib/data/models';
 import styles from './our-models.module.css';
 import Link from 'next/link';
 import Image from 'next/image';

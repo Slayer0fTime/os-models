@@ -1,4 +1,4 @@
-import { getModelById } from '@/app/ui/models/data';
+import { getModelById } from '@/app/lib/data/models';
 import { notFound } from 'next/navigation';
 import styles from '@/app/ui/models/model-portfolio.module.css';
 import Image from 'next/image';
