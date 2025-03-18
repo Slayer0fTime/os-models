@@ -1,0 +1,86 @@
+'use client';
+
+import styles from '@/app/ui/models/our-models.module.css';
+import { roboto } from '../fonts';
+import { useSearchParams } from 'next/navigation';
+import Link from 'next/link';
+import clsx from 'clsx';
+
+export default function Filters() {
+  const filterGenders = [
+    { href: 'male', name: 'Хлопчики' },
+    { href: 'female', name: 'Дівчата' },
+  ];
+
+  const searchParams = useSearchParams();
+  const currentGender = searchParams.get('gender');
+
+  const getUpdatedQuery = (selectedType: string | null) => {
+    const params = new URLSearchParams(searchParams);
+
+    if (selectedType === currentGender) {
+      params.delete('gender');
+    } else {
+      params.set('gender', selectedType!);
+    }
+
+    return `?${params.toString()}`;
+  };
+
+  return (
+    <div className={styles['filters']}>
+      <div className={styles['filter-sidebar']}>
+        <button className={styles['sort-by-age-btn']}>
+          Вік
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="9"
+            height="17"
+            viewBox="0 0 9 17"
+            fill="none">
+            <path
+              fillRule="evenodd"
+              clipRule="evenodd"
+              d="M4.5 -3.93403e-07C4.36741 -4.04994e-07 4.24025 0.0639606 4.1465 0.177816C4.05274 0.291669 4.00007 0.446088 4.00007 0.607103L4.00007 14.9263L0.854511 11.1051C0.760637 10.9911 0.633317 10.9271 0.50056 10.9271C0.367803 10.9271 0.240483 10.9911 0.14661 11.1051C0.0527358 11.2191 -1.41549e-06 11.3738 -1.42958e-06 11.535C-1.44368e-06 11.6962 0.0527358 11.8508 0.14661 11.9648L4.14605 16.8216C4.19249 16.8782 4.24766 16.923 4.30839 16.9536C4.36913 16.9842 4.43424 17 4.5 17C4.56576 17 4.63087 16.9842 4.69161 16.9536C4.75234 16.923 4.80751 16.8782 4.85395 16.8216L8.85339 11.9648C8.89987 11.9084 8.93674 11.8414 8.9619 11.7676C8.98705 11.6939 9 11.6148 9 11.535C9 11.3738 8.94726 11.2191 8.85339 11.1051C8.75952 10.9911 8.6322 10.9271 8.49944 10.9271C8.36668 10.9271 8.23936 10.9911 8.14549 11.1051L4.99993 14.9263L4.99993 0.607103C4.99993 0.446088 4.94726 0.291669 4.8535 0.177816C4.75975 0.0639607 4.63259 -3.81811e-07 4.5 -3.93403e-07Z"
+              fill="#9B71B3"
+            />
+          </svg>
+        </button>
+
+        <div className={styles['filter-by-gender']}>
+          {filterGenders.map((gender, index) => (
+            <Link
+              key={index}
+              className={clsx(styles['gender-filter-btn'], {
+                [styles.active]: gender.href === currentGender,
+              })}
+              href={getUpdatedQuery(gender.href)}>
+              {gender.name}
+            </Link>
+          ))}
+          {/* <button className={styles['gender-filter-btn']}>Хлопчики</button>
+          <button className={styles['gender-filter-btn']}>Дівчата</button> */}
+        </div>
+      </div>
+      <button className={styles['age-category']}>
+        <span>
+          <span className={roboto.className}>5 - 8 </span>
+          років
+        </span>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="17"
+          height="9"
+          viewBox="0 0 17 9"
+          fill="none">
+          <path
+            d="M1 1.5L8.5 7.5L16 1.5"
+            stroke="#9B71B3"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+          />
+        </svg>
+      </button>
+    </div>
+  );
+}

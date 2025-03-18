@@ -1,0 +1,123 @@
+.main {
+  display: flex;
+  justify-content: center;
+  min-height: calc(100dvh - var(--header-height));
+  padding: 80px 20px;
+}
+
+.section-title {
+  width: fit-content;
+  margin: 0 auto 64px;
+  padding: 10px;
+  color: var(--dark-text, #252525);
+  border-bottom: 2px solid var(--lavanda, #9b71b3);
+  text-align: center;
+  font-size: 36px;
+  font-weight: 300;
+}
+
+.contacts-section-container {
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.location-container {
+  display: flex;
+  align-items: center;
+  gap: 70px;
+}
+
+.location-map {
+  object-fit: cover;
+  width: 700px;
+  height: 372px;
+  border-radius: 8px;
+  border: 4px solid var(--lavanda, #9b71b3);
+}
+
+.location-address {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 20px;
+  text-align: right;
+  word-break: break-word;
+  font-size: 32px;
+  font-weight: 500;
+}
+
+.contacts-info {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin-top: 8px;
+  font-size: 18px;
+  word-break: break-word;
+}
+
+.contact-phone-number {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--dark-text, #252525);
+}
+
+.contact-email {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--lavanda, #9b71b3);
+  font-weight: 400;
+}
+
+@media (max-width: 1024px) {
+  .main {
+      padding: 60px 20px 40px;
+  }
+  .section-title {
+      margin-bottom: 34px;
+  }
+  .location-container {
+      flex-direction: column-reverse;
+      align-items: baseline;
+      gap: 20px;
+  }
+  .location-address {
+      align-items: baseline;
+      text-align: left;
+      font-size: 28px;
+  }
+}
+@media (max-width: 768px) {
+  .main {
+      padding: 40px 20px;
+  }
+  .location-container {
+      gap: 12px;
+  }
+  .location-address {
+      gap: 8px;
+      font-size: 22px;
+  }
+  .location-map {
+      width: 100%;
+      height: 294px;
+  }
+  .contacts-info {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .main {
+      padding: 28px 20px 20px;
+  }
+  .section-title {
+      font-size: 26px;
+  }
+  .location-container {
+      gap: 10px;
+  }
+}
