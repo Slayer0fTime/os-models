@@ -11,9 +11,8 @@ export function TeacherSlider() {
 
   useEffect(() => {
     const mediaQuery = window.matchMedia('(max-width: 480px)');
-    // console.log('media query:', mediaQuery)
 
-    const updateCardsPerPage = (e) => {
+    const updateCardsPerPage = (e: MediaQueryList | MediaQueryListEvent) => {
       setCardsPerPage(e.matches ? 4 : 6);
       setPage(0);
     };
