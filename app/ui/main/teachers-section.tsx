@@ -1,8 +1,7 @@
 import clsx from 'clsx';
 import styles from './main.module.css';
-import teachers from '@/app/lib/data/teachers';
+import { teachers } from '@/app/lib/data/teachers';
 import { TeacherSlider } from './teacher-slider';
-import teachers from '@/app/lib/data/teachers';
 
 export default function TeachersSection() {
   return (
