@@ -1,8 +1,9 @@
 import styles from '@/app/ui/models/our-models.module.css';
 import Filters from '@/app/ui/models/filters';
 import ModelCards from '@/app/ui/models/model-cards';
+import { ModelsByAgeGroup } from '@/app/lib/data/models';
 
-export default async function Page({ params }: { params: Promise<{ ageGroup: string }> }) {
+export default async function Page({ params }: { params: Promise<{ ageGroup: keyof ModelsByAgeGroup }> }) {
   return (
     <main className={styles['main']}>
       <section className={styles['section']}>

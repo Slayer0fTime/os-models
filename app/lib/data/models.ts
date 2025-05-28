@@ -29,7 +29,7 @@ interface Model {
   gender: 'male' | 'female';
 }
 
-interface ModelsByAgeGroup {
+export interface ModelsByAgeGroup {
   kids: Model[];
   juniors: Model[];
   teens: Model[];

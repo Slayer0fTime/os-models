@@ -1,16 +1,16 @@
 'use client';
 
 import { notFound, useSearchParams } from 'next/navigation';
-import { modelsByAgeGroup } from '@/app/lib/data/models';
+import { modelsByAgeGroup, ModelsByAgeGroup } from '@/app/lib/data/models';
 import styles from './our-models.module.css';
 import Link from 'next/link';
 import Image from 'next/image';
 
-export default function ModelCards({ ageGroup }: { ageGroup: string }) {
-  const models = modelsByAgeGroup[ageGroup]; //[ageGroup as keyof typeof modelsByAgeGroup]
+export default function ModelCards({ ageGroup }: { ageGroup: keyof ModelsByAgeGroup }) {
+  const models = modelsByAgeGroup[ageGroup];
   if (!models) {
     return notFound();
-  } 
+  }
 
   const searchParams = useSearchParams();
   const genderFilter = searchParams.get('gender');
