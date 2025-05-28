@@ -3,8 +3,12 @@ import { notFound } from 'next/navigation';
 import styles from '@/app/ui/models/model-portfolio.module.css';
 import Image from 'next/image';
 
-export default function Page({ params }: { params: { ageGroup: string; id: string } }) {
-  const { ageGroup, id } = params;
+export default async function Page({
+  params,
+}: {
+  params: Promise<{ ageGroup: string; id: string }>;
+}) {
+  const { ageGroup, id } = await params;
   const model = getModelById(ageGroup, id);
 
   if (!model) {

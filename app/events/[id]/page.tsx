@@ -4,8 +4,8 @@ import { roboto } from '@/app/ui/fonts';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 
-export default function Page({ params }: { params: { id: string } }) {
-  const event = getEventById(params.id);
+export default async function Page({ params }: { params: Promise<{ id: string }> }) {
+  const event = getEventById((await params).id);
 
   if (!event) {
     return notFound();
@@ -30,12 +30,16 @@ export default function Page({ params }: { params: { id: string } }) {
             <span className={`${roboto.className} ${styles['event-date']}`}>{event.date}</span>
           </div>
         </div>
-        <h3 className={styles['event-gallery-title']}>Фототека</h3>
-        <div className={styles['event-gallery']}>
-          {event.gallery.map((src, index) => (
-            <Image key={index} src={src} alt="event-photo" width={200} height={150} />
-          ))}
-        </div>
+        {event.gallery && (
+          <>
+            <h3 className={styles['event-gallery-title']}>Фототека</h3>
+            <div className={styles['event-gallery']}>
+              {event.gallery.map((src, index) => (
+                <Image key={index} src={src} alt="event-photo" width={200} height={150} />
+              ))}
+            </div>
+          </>
+        )}
       </section>
     </main>
   );
