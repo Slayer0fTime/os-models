@@ -1,0 +1,1107 @@
+.site-header-container {
+  display: flex;
+  flex-direction: column;
+  height: calc(100dvh - var(--header-height));
+  background-image: url('/main/main.jpg');
+  /* background-repeat: repeat-x; */
+  /* background-size: cover; */
+  background-position: 0 0, 100% 0;
+  animation: scroll-bg 60s linear infinite;
+}
+
+@keyframes scroll-bg {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 100dvw 100dvh;
+  }
+}
+
+.title-container {
+  flex-grow: 1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  padding: 0 20px;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 0;
+  background-color: var(--dark-bg-color);
+  padding: 10px 20px;
+  border-radius: 12px;
+  font-size: 90px;
+}
+
+.title > span {
+  display: flex;
+  color: var(--title-color);
+}
+
+.title > span:nth-child(1) {
+  font-weight: 400;
+}
+
+.title > span:nth-child(2) {
+  font-weight: 200;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 160px;
+  margin-top: 160px;
+  margin-bottom: 120px;
+}
+
+.section {
+  display: flex;
+  justify-content: center;
+  padding: 0 20px;
+}
+
+.section-content {
+  display: flex;
+  flex-direction: column;
+  gap: 46px;
+}
+
+.section-title {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.section-title > h2 {
+  display: flex;
+  padding: 10px;
+  border-bottom: 2px solid var(--lavanda, #9b71b3);
+  color: var(--dark-text);
+  /* font-family: "Raleway", sans-serif; */
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+}
+
+.programophone-section-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.programophone-section-video {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.programophone-section-side-video {
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.programophone-section-video-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 400px;
+  gap: 26px;
+  padding: 8px 8px 20px;
+  border-radius: 16px;
+  border: 4px solid var(--lavanda, #9b71b3);
+}
+
+.video-card-video {
+  height: 600px;
+  width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.video-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 160px;
+}
+
+.programophone-section-types {
+  display: flex;
+  width: 386px;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.programophone-section-type {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  border: 2px solid var(--lavanda, #9b71b3);
+  border-radius: 8px;
+
+  text-align: left;
+  color: var(--dark-text, #252525);
+  font-family: 'Raleway', sans-serif;
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+
+  fill: var(--lavanda);
+  transition: all 0.3s ease-in-out;
+}
+
+.programophone-section-type.selected,
+.programophone-section-type:hover {
+  background-color: var(--lavanda, #9b71b3);
+  color: var(--white-text);
+  fill: var(--white-text);
+}
+
+.programophone-section-type > svg {
+  width: 16px;
+  height: 16px;
+}
+
+.teachers-section-content {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 25px;
+}
+
+.teacher-cards-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+}
+
+.teacher-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(140px, 176px));
+  grid-template-rows: repeat(2, 1fr);
+  gap: 20px;
+  width: 100%;
+}
+
+.teacher-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 6px;
+  border: 2px solid var(--lavanda, #9b71b3);
+  overflow: hidden;
+}
+
+.teacher-card-image-wrapper {
+  position: relative;
+  height: 242px;
+}
+
+.teacher-card > img {
+  height: 242px;
+  object-fit: cover;
+}
+
+.teacher-card-details {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 10px 6px 6px;
+  color: var(--dark-text);
+}
+
+.teacher-card-details-direction {
+  font-size: 16px;
+}
+
+.teacher-card-details > h3 {
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  font-size: 24px;
+}
+
+.teachers-section-photo-navigation {
+  display: flex;
+  gap: 36px;
+  color: var(--dark-text, #252525);
+  font-family: 'Roboto', sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+}
+
+.prev-button,
+.next-button,
+.pagination {
+  display: flex;
+  align-items: center;
+}
+
+.teachers-section-description {
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  width: 350px;
+}
+
+.teachers-section-description-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 20px;
+  border-radius: 4px;
+  background-color: var(--lavanda);
+  color: var(--white-text, #f3f3f3);
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  text-transform: uppercase;
+  vertical-align: middle;
+}
+
+.teachers-section-description-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.teachers-section-description-content > span {
+  display: flex;
+  align-items: center;
+  height: 36px;
+  padding: 0 12px;
+  border-radius: 4px;
+  border: 1.5px solid var(--lavanda);
+  color: var(--dark-text, #252525);
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+}
+
+.trial-lesson-card {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  max-width: 1500px;
+  padding: 100px 30px;
+  gap: 88px;
+  border-radius: 16px;
+  border: 2px dashed var(--lavanda);
+}
+
+.trial-dates-card {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  max-width: 600px;
+  padding: 20px;
+  border-radius: 8px;
+  border: 2px solid var(--lavanda);
+  color: var(--dark-text, #252525);
+}
+
+.trial-dates-card > h3 {
+  font-size: 26px;
+  font-weight: 400;
+}
+
+.trial-dates {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-size: 24px;
+  font-weight: 300;
+}
+
+.trial-lesson-event {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  gap: 20px;
+}
+
+.trial-lesson-event > h3 {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  border-bottom: 2px solid var(--lavanda);
+  color: var(--dark-text, #252525);
+  font-size: 36px;
+  font-weight: 200;
+}
+
+.trial-lesson-event-learn-more-btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 212px;
+  padding: 8px 20px;
+  border-radius: 4px;
+  border: 1.5px solid var(--lavanda, #9b71b3);
+  fill: var(--lavanda, #9b71b3);
+  font-family: inherit;
+  color: var(--dark-text, #252525);
+  font-weight: 300;
+  font-size: 18px;
+  transition: all 0.3s ease-in-out;
+}
+
+.trial-lesson-event-learn-more-btn:hover {
+  background-color: var(--lavanda, #9b71b3);
+  color: var(--white-text);
+  fill: var(--white-text);
+}
+
+.achievements-section-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 32px 30px;
+  flex-wrap: wrap;
+}
+
+.achievements-section-content > span {
+  display: flex;
+  align-items: center;
+  padding: 8px 24px;
+  border-radius: 6px;
+  border: 2px solid var(--lavanda, #9b71b3);
+  color: var(--dark-text, #252525);
+  text-align: center;
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+}
+
+.faq-section-content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: start;
+  gap: 30px;
+}
+
+.faq-card {
+  /* display: flex; */
+  /* flex-direction: column; */
+  padding: 20px 12px;
+  border-radius: 8px;
+  border: 2px solid var(--lavanda, #9b71b3);
+  color: var(--dark-text, #252525);
+  stroke: var(--lavanda, #9b71b3);
+  transition: background-color 0.4s ease-in-out, color 0.4s ease-in-out;
+}
+
+.faq-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.faq-card-header > h3 {
+  width: 100%;
+  font-size: 26px;
+  font-weight: 300;
+  transition: padding-bottom 0.4s ease-in-out;
+}
+
+.faq-card-btn {
+  display: flex;
+  /* padding: 1rem; */
+  margin: 0 1rem;
+}
+
+.faq-card.active {
+  background-color: var(--lavanda, #9b71b3);
+  stroke: var(--white-text, #f3f3f3);
+  color: var(--white-text, #f3f3f3);
+}
+
+.faq-card.active h3 {
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--white-text, #f3f3f3);
+}
+
+.faq-card-answer {
+  overflow: hidden;
+  max-height: 0;
+  /* margin-top: 1.25rem; */
+  color: var(--white-text, #f3f3f3);
+  font-size: 20px;
+  /* font-style: normal; */
+  font-weight: 300;
+  /* line-height: normal; */
+  transition: all 0.4s ease-out;
+}
+
+.faq-card-answer.active {
+  max-height: 1000px;
+  margin-top: 1.25rem;
+}
+
+.location-section-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 20px;
+}
+
+.location-map {
+  object-fit: cover;
+  width: 100%;
+  max-width: 700px;
+  height: 372px;
+  border-radius: 8px;
+  border: 4px solid var(--lavanda, #9b71b3);
+}
+
+.location-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.location-details > p {
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.registration-trial-lesson-container {
+  display: flex;
+  gap: 40px;
+}
+
+.registration-trial-lesson {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  gap: 12px;
+  /* width: max-content; */
+}
+
+.registration-trial-lesson-card {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  gap: 40px;
+  border-radius: 16px;
+  border: 2px solid var(--lavanda, #9b71b3);
+}
+
+.registration-trial-lesson-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.registration-trial-lesson-card-header > h3 {
+  color: var(--dark-text, #252525);
+  font-size: 26px;
+  font-weight: 300;
+}
+
+.registration-trial-lesson-card-header > b {
+  display: flex;
+  padding: 4px 12px;
+  align-items: center;
+  border-radius: 4px;
+  background: var(--lavanda, #9b71b3);
+  font-family: 'Inter', sans-serif;
+  color: var(--white-text);
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+}
+
+.registration-trial-lesson-card-model-info {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px 40px;
+}
+
+.registration-trial-lesson-card-model-info > input {
+  width: 100%;
+  padding: 0 4px;
+  border-bottom: 1px solid var(--dark-text, #252525);
+  color: var(--dark-text, #252525);
+  font-family: 'Raleway';
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+}
+
+.registration-trial-lesson-card-timestamp {
+  align-self: center;
+  color: var(--dark-text, #252525);
+  font-family: 'Raleway';
+  font-size: 18px;
+  font-weight: 300;
+}
+
+.timestamp-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.timestamp-buttons > button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 12px;
+  border-bottom: 1px solid #000;
+  color: var(--dark-text, #252525);
+  font-family: 'Roboto';
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.registration-trial-lesson-button {
+  display: flex;
+  justify-content: center;
+  width: 176px;
+  padding: 0.5rem 0;
+  border-radius: 8px;
+  border: 1.5px solid var(--lavanda, #9b71b3);
+
+  color: var(--dark-text, #252525);
+  text-align: center;
+  font-family: 'Raleway';
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.registration-trial-lesson-button:hover {
+  color: var(--white-text, #f3f3f3);
+  background-color: var(--lavanda, #9b71b3);
+}
+
+.trial-lesson-price-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+}
+
+.trial-lesson-price-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.trial-lesson-price-card {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 282px;
+  padding: 12px 20px 12px 12px;
+  border-radius: 8px;
+  border: 2px solid var(--lavanda, #9b71b3);
+}
+
+.trial-lesson-price-card > h3 {
+  color: var(--dark-text);
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.price-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  color: var(--dark-text);
+  font-family: 'Inter', sans-serif;
+}
+
+.original-price {
+  font-size: 1rem;
+  text-decoration-line: line-through;
+  color: #7b7b7b;
+}
+
+.discounted-price {
+  font-size: 1.25rem;
+}
+
+.discount-info {
+  color: #7ed957;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.trial-lesson-price-learn-more-button {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 20px;
+  border-radius: 4px;
+  border: 1.5px solid var(--lavanda);
+}
+
+@media (max-width: 1024px) {
+  .title {
+    font-size: 72px;
+  }
+
+  .main {
+    gap: 100px;
+    margin-top: 100px;
+    margin-bottom: 60px;
+  }
+
+  .section-content {
+    gap: 40px;
+  }
+
+  .programophone-section-side-video {
+    display: none;
+  }
+
+  .programophone-section-video-card {
+    width: 370px;
+    gap: 16px;
+  }
+
+  .programophone-section-content {
+    justify-content: space-evenly;
+  }
+
+  .teachers-section-content {
+    flex-direction: column;
+    gap: 100px;
+  }
+
+  .teachers-section-description {
+    width: auto;
+    align-items: center;
+  }
+
+  .teachers-section-description-content {
+    justify-content: center;
+  }
+
+  .teachers-section-description-title {
+    width: 230px;
+  }
+
+  .achievements-section-content {
+    gap: 20px;
+  }
+
+  .trial-lesson-card {
+    padding: 60px 30px;
+    gap: 20px;
+  }
+
+  .trial-lesson-event {
+    gap: 12px;
+  }
+
+  .location-section-content {
+    flex-direction: column;
+    align-self: center;
+  }
+
+  .location-map {
+    height: 320px;
+  }
+
+  .location-details {
+    align-self: flex-start;
+  }
+
+  .location-details > p {
+    font-size: 28px;
+  }
+
+  .registration-trial-lesson-container {
+    flex-direction: column;
+  }
+
+  .trial-lesson-price-cards {
+    flex-direction: row;
+    width: 100%;
+  }
+
+  .trial-lesson-price-card {
+    width: 100%;
+  }
+
+  .faq-section-content {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 46px;
+  }
+
+  .main {
+    gap: 64px;
+    margin-top: 80px;
+  }
+
+  .programophone-section-content {
+    flex-direction: column-reverse;
+    align-items: normal;
+    gap: 24px;
+  }
+
+  .programophone-section-types {
+    width: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px 20px;
+  }
+
+  .programophone-section-type {
+    min-width: 0;
+    padding: 12px;
+    font-size: 20px;
+  }
+
+  .programophone-section-type > span {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  .teachers-section-content {
+    gap: 64px;
+  }
+
+  .teacher-cards-wrapper {
+    gap: 16px;
+  }
+
+  .teacher-cards {
+    gap: 10px;
+  }
+
+  .teacher-card > img {
+    height: 180px;
+  }
+
+  .teacher-card-details > h3 {
+    font-size: 18px;
+  }
+
+  .teachers-section-photo-navigation {
+    font-size: 16px;
+  }
+
+  .teachers-section-description-title {
+    width: 170px;
+    padding: 6px 0;
+    font-size: 22px;
+  }
+
+  .teachers-section-description-content > span {
+    font-size: 20px;
+  }
+
+  .achievements-section-content {
+    gap: 12px;
+  }
+
+  .achievements-section-content > span {
+    padding: 6px 12px;
+    border-radius: 8px;
+    border-width: 1.5px;
+    font-size: 20px;
+  }
+
+  .trial-lesson-card {
+    flex-direction: column;
+    padding: 0;
+    border: none;
+    border-radius: unset;
+  }
+
+  .trial-dates-card {
+    width: auto;
+    padding: 16px;
+    gap: 12px;
+  }
+
+  .trial-dates-card > h3 {
+    font-size: 22px;
+  }
+
+  .trial-dates {
+    font-size: 20px;
+    gap: 6px;
+  }
+
+  .trial-lesson-event > h3 {
+    font-size: 26px;
+  }
+
+  .trial-lesson-event-learn-more-btn {
+    width: auto;
+    padding: 8px 12px;
+    gap: 8px;
+    font-size: 1em;
+  }
+
+  .location-section-content {
+    gap: 8px;
+  }
+
+  .location-map {
+    height: 260px;
+  }
+
+  .location-details {
+    gap: 8px;
+  }
+
+  .location-details > p {
+    font-size: 26px;
+  }
+
+  .registration-trial-lesson-card-header > h3 {
+    font-size: 24px;
+  }
+
+  .registration-trial-lesson-card-model-info {
+    gap: 20px;
+  }
+
+  .timestamp-buttons {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+
+  .timestamp-buttons > button {
+    width: 105px;
+    padding: 4px 6px;
+  }
+
+  .trial-lesson-price-card {
+    padding: 12px 6px;
+    gap: 1em;
+    /* min-width: 210px; */
+  }
+
+  .discount-info {
+    font-size: 14px;
+  }
+
+  .trial-lesson-price-card > h3 {
+    font-size: 20px;
+  }
+
+  .faq-section-content {
+    gap: 12px;
+  }
+
+  .faq-card {
+    padding: 12px;
+  }
+
+  .faq-card-header > h3 {
+    font-size: 22px;
+  }
+
+  .faq-card-answer {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 36px;
+  }
+
+  .section-title > h2 {
+    font-size: 26px;
+  }
+
+  .section-content {
+    gap: 20px;
+  }
+
+  .programophone-section-types {
+    gap: 10px;
+  }
+
+  .programophone-section-type {
+    font-size: 16px;
+    padding: 8px 6px;
+  }
+
+  .programophone-section-type > svg {
+    width: 12px;
+    height: 12px;
+  }
+
+  .teachers-section-content {
+    gap: 40px;
+  }
+
+  .teacher-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .prev-button > svg,
+  .next-button > svg {
+    width: 25px;
+    height: 16px;
+  }
+
+  .teachers-section-description {
+    gap: 16px;
+  }
+
+  .teachers-section-description-title {
+    width: 152px;
+    padding: 4px 0;
+  }
+
+  .teachers-section-description-content > span {
+    height: 28px;
+    font-size: 16px;
+  }
+
+  .teachers-section-description-content > span:last-child {
+    display: none;
+  }
+
+  .achievements-section-content > span {
+    font-size: 16px;
+  }
+
+  .trial-dates-card {
+    padding: 10px 12px;
+    gap: 8px;
+  }
+
+  .trial-dates-card > h3 {
+    font-size: 20px;
+  }
+
+  .trial-dates {
+    font-size: 18px;
+    gap: 2px;
+  }
+
+  .trial-lesson-event > h3 {
+    font-size: 22px;
+  }
+
+  .trial-lesson-event-learn-more-btn {
+    font-size: 14px;
+  }
+
+  .location-section-content,
+  .location-details {
+    gap: 4px;
+  }
+
+  .location-map {
+    height: 180px;
+  }
+
+  .location-details > p {
+    font-size: 18px;
+  }
+
+  .registration-trial-lesson-card {
+    gap: 20px;
+  }
+
+  .registration-trial-lesson-card-header > h3 {
+    font-size: 18px;
+  }
+
+  .registration-trial-lesson-card-header > b {
+    font-size: 14px;
+  }
+
+  .registration-trial-lesson-card-model-info > input {
+    font-size: 12px;
+  }
+
+  .registration-trial-lesson-card-timestamp {
+    font-size: 14px;
+  }
+
+  .timestamp-buttons {
+    align-items: center;
+  }
+
+  .timestamp-buttons > button {
+    font-size: 10px;
+  }
+
+  .registration-trial-lesson-button {
+    width: 150px;
+    font-size: 14px;
+    padding: 6px 0;
+  }
+
+  .trial-lesson-price-card {
+    padding: 4px 6px;
+    gap: 12px;
+  }
+
+  .trial-lesson-price-card > h3 {
+    font-size: 1em;
+  }
+
+  .original-price {
+    font-size: 12px;
+  }
+
+  .discounted-price {
+    font-size: 14px;
+  }
+
+  .discount-info {
+    font-size: 9px;
+  }
+
+  .faq-card-header > h3 {
+    font-size: 1rem;
+  }
+
+  .faq-card-answer {
+    font-size: 14px;
+  }
+}

@@ -1,0 +1,68 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 1rem;
+  padding: 38px 20px 20px;
+  background: var(--dark-bg-color);
+  color: var(--white-text);
+  font-family: 'Roboto';
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+}
+
+.contact-info-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.contact-icons {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.contact-info {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  align-items: center;
+  gap: 8px;
+}
+
+.opening-hours {
+  grid-column-start: 2;
+}
+
+.copyright {
+  font-family: 'Raleway', sans-serif;
+  text-align: center;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+@media (max-width: 768px) {
+
+  .footer {
+    padding: 12px 20px;
+    font-size: 14px;
+  }
+
+  .footer svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .contact-icons {
+    gap: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-icons {
+    gap: 0.5rem;
+  }
+}

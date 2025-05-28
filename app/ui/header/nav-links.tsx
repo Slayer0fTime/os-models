@@ -5,25 +5,16 @@ import Link from 'next/link';
 import clsx from 'clsx';
 import { usePathname } from 'next/navigation';
 
-const links = [
-  { name: 'Головна', href: '/' },
-  { name: 'Моделі', href: '/models' },
-  { name: 'Викладачі', href: '/teachers' },
-  { name: 'Події', href: '/events' },
-  { name: 'Ціни', href: '/prices' },
-  { name: 'Контакти', href: '/contacts' },
-];
-
-export default function NavLinks() {
+export default function NavLinks({ links }: { links: { name: string; href: string }[] }) {
   const pathname = usePathname();
 
   return (
     <ul>
-      {links.map((link) => {
+      {links.map((link, index) => {
         const isActive = pathname === link.href || pathname.startsWith(`${link.href}/`);
 
         return (
-          <li key={link.name}>
+          <li key={index}>
             <Link href={link.href} className={clsx({ [styles.selected]: isActive })}>
               {link.name}
             </Link>

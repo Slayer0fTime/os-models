@@ -6,7 +6,7 @@ export default function TeacherCards() {
   return (
     <div className={styles['teacher-cards']}>
       {teachers.map((teacher, index) => (
-        <TeacherCard {...teacher}/>
+        <TeacherCard {...teacher} key={index}/>
       ))}
     </div>
   );

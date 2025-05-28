@@ -8,6 +8,7 @@
   --lavanda-5: #e9dfee;
   --title-color: #c185e6;
   --light-green: #7ed957;
+  --header-height: 80px;
 }
 
 * {
@@ -22,7 +23,6 @@ li {
 }
 
 body {
-  /* font-family: 'Raleway', sans-serif; */
   background-color: var(--bg-color);
 }
 
@@ -54,4 +54,10 @@ svg {
   /* width: 100%; */
   /* max-width: 1218px; */
   width: min(100%, 1218px);
+}
+
+@media (max-width: 768px) {
+  :root {
+    --header-height: 64px;
+  }
 }

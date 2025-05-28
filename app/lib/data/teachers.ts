@@ -88,4 +88,13 @@ export const teachers: Teacher[] = [
     instagram: 'https://www.instagram.com/',
     facebook: 'https://www.facebook.com/',
   },
+  {
+    image: '/teachers/teacher1.jpg',
+    fullName: 'Вікторія Іванівна',
+    bio: 'Справжній експерт у світі моди та дефіле. Її великий досвід та вміння вести покази одягу роблять її відмінним викладачем.',
+    speciality: 'Дефіле',
+    specialityDescription: 'Ви навчитесь правильній ході, та як правильно тримати спину',
+    instagram: 'https://www.instagram.com/',
+    facebook: 'https://www.facebook.com/',
+  },
 ];
