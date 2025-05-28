@@ -63,7 +63,7 @@ export const modelsByAgeGroup: ModelsByAgeGroup = {
       name: 'Олександр Іванов',
       age: 8,
       height: 145,
-      // chest: 46,
+      chest: 46,
       waist: 40,
       hips: 47,
       image: '/models/model3.jpg',
