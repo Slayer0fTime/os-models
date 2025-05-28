@@ -1,8 +1,8 @@
 'use client';
 
 import styles from '@/app/ui/contacts/contacts.module.css';
-import LocationMap from '@/app/ui/contacts/location-map';
-import TestGoogleMap from '@/app/ui/contacts/test-google-map';
+// import LocationMap from '@/app/ui/contacts/location-map';
+// import TestGoogleMap from '@/app/ui/contacts/test-google-map';
 
 export default function Page() {
   return (
@@ -14,7 +14,7 @@ export default function Page() {
             {/* <img className={styles['location-map']} src="" alt="map" /> */}
             {/* <LocationMap /> */}
 
-            <TestGoogleMap />
+            {/* <TestGoogleMap /> */}
 
             <div className={styles['location-address']}>
               <p>Васильківська вул. 34</p>

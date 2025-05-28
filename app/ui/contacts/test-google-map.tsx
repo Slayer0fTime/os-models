@@ -1,5 +1,5 @@
 // import React from 'react';
-import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
+/*import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
 import styles from '@/app/ui/contacts/contacts.module.css';
 
 const defaultMapCenter = {
@@ -41,3 +41,4 @@ export default function TestGoogleMap() {
   );
 }
 
+*/
