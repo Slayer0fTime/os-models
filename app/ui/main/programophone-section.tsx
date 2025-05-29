@@ -2,39 +2,40 @@
 
 import { useState, useRef } from 'react';
 import styles from './main.module.css';
-import { programophoneVideos } from '@/app/lib/data/programophone';
+import { programophoneSubjects } from '@/app/lib/data/programophone';
 import clsx from 'clsx';
 import Image from 'next/image';
 
 export default function ProgramophoneSection() {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [subjectIndex, setSubjectIndex] = useState(0);
+  const [videoIndex, setVideoIndex] = useState(0);
   const videoRef = useRef<HTMLVideoElement>(null);
 
-  const currentVideo = programophoneVideos[currentIndex];
-  const prevIndex = (currentIndex - 1 + programophoneVideos.length) % programophoneVideos.length;
-  const nextIndex = (currentIndex + 1) % programophoneVideos.length;
+  const currentSubject = programophoneSubjects[subjectIndex];
+  const videos = currentSubject.videos;
+  const currentVideo = videos[videoIndex];
 
-  const handlePlay = () => {
-    if (videoRef.current) {
-      videoRef.current.play();
-    }
-  };
+  const prevIndex = (videoIndex - 1 + videos.length) % videos.length;
+  const nextIndex = (videoIndex + 1) % videos.length;
 
-  const handleSelectType = (index: number) => {
-    setCurrentIndex(index);
+  const handlePlay = () => videoRef.current?.play();
+
+  const handleSelectSubject = (index: number) => {
+    setSubjectIndex(index);
+    setVideoIndex(0);
   };
 
   const handlePrev = () => {
-    setCurrentIndex(prevIndex);
+    setVideoIndex(prevIndex);
   };
 
   const handleNext = () => {
-    setCurrentIndex(nextIndex);
+    setVideoIndex(nextIndex);
   };
 
   return (
     <section className={styles['section']}>
-      <div className={clsx(styles['section-content'], 'container')}>
+      <div className={clsx('container', styles['section-content'])}>
         <div className={styles['section-title']}>
           <h2>Програмофон</h2>
         </div>
@@ -42,7 +43,7 @@ export default function ProgramophoneSection() {
         <div className={styles['programophone-section-content']}>
           <div className={styles['programophone-section-video']}>
             <Image
-              src={programophoneVideos[prevIndex].poster}
+              src={videos[prevIndex].poster}
               width={140}
               height={384}
               className={styles['programophone-section-side-video']}
@@ -62,14 +63,16 @@ export default function ProgramophoneSection() {
                 <button onClick={handlePrev}>
                   <PrevIcon />
                 </button>
-                <button onClick={handlePlay}>{<PlayIcon />}</button>
+                <button onClick={handlePlay}>
+                  <PlayIcon />
+                </button>
                 <button onClick={handleNext}>
                   <NextIcon />
                 </button>
               </div>
             </div>
             <Image
-              src={programophoneVideos[nextIndex].poster}
+              src={videos[nextIndex].poster}
               width={140}
               height={384}
               className={styles['programophone-section-side-video']}
@@ -78,15 +81,15 @@ export default function ProgramophoneSection() {
           </div>
 
           <div className={styles['programophone-section-types']}>
-            {programophoneVideos.map((video, index) => (
+            {programophoneSubjects.map((subject, index) => (
               <button
                 key={index}
                 className={clsx(styles['programophone-section-type'], {
-                  [styles.selected]: index === currentIndex,
+                  [styles.selected]: index === subjectIndex,
                 })}
-                onClick={() => handleSelectType(index)}>
-                <span>{video.type}</span>
-                <ArrowRight />
+                onClick={() => handleSelectSubject(index)}>
+                <span>{subject.name}</span>
+                <ArrowRightIcon />
               </button>
             ))}
           </div>
@@ -135,7 +138,7 @@ function PlayIcon() {
   );
 }
 
-function ArrowRight() {
+function ArrowRightIcon() {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
       <path

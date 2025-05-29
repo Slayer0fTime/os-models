@@ -1,50 +1,87 @@
-export interface ProgramophoneVideoData {
-  type: string;
-  src: string;
-  poster: string;
+export interface ProgramophoneSubject {
+  name: string;
+  videos: Array<{ src: string; poster: string }>;
 }
 
-export const programophoneVideos: ProgramophoneVideoData[] = [
+export const programophoneSubjects: ProgramophoneSubject[] = [
   {
-    type: 'Дефіле',
-    src: '/videos/4778723-uhd_2160_4096_25fps.mp4',
-    poster: '/posters/poster1.png',
+    name: 'Дефіле',
+    videos: [
+      { src: '/videos/4778723-uhd_2160_4096_25fps.mp4', poster: '/posters/poster1.png' },
+      { src: '/videos/SampleVideo_1280x720_1mb.mp4', poster: '/posters/poster2.png' },
+      { src: '/videos/13758036_1080_1920_25fps.mp4', poster: '/posters/poster3.png' },
+    ],
   },
   {
-    type: 'Акторська майстерність',
-    src: '/videos/SampleVideo_1280x720_1mb.mp4',
-    poster: '/posters/poster2.png',
+    name: 'Акторська майстерність',
+    videos: [
+      { src: '/videos/SampleVideo_1280x720_1mb.mp4', poster: '/posters/poster3.png' },
+      { src: '/videos/4778723-uhd_2160_4096_25fps.mp4', poster: '/posters/poster2.png' },
+      { src: '/videos/13758036_1080_1920_25fps.mp4', poster: '/posters/poster1.png' },
+    ],
   },
   {
-    type: 'Психологія',
-    src: '/videos/13758036_1080_1920_25fps.mp4',
-    poster: '/posters/poster1.png',
-  },
-  { type: 'Візаж', src: '/videos/4778723-uhd_2160_4096_25fps.mp4', poster: '/posters/poster2.png' },
-  { type: 'Стиль', src: '/videos/SampleVideo_1280x720_30mb.mp4', poster: '/posters/poster3.png' },
-  {
-    type: 'Фотопозування',
-    src: '/videos/13758036_1080_1920_25fps.mp4',
-    poster: '/posters/poster1.png',
+    name: 'Психологія',
+    videos: [
+      { src: '/videos/4778723-uhd_2160_4096_25fps.mp4', poster: '/posters/poster2.png' },
+      { src: '/videos/SampleVideo_1280x720_1mb.mp4', poster: '/posters/poster3.png' },
+      { src: '/videos/13758036_1080_1920_25fps.mp4', poster: '/posters/poster1.png' },
+    ],
   },
   {
-    type: 'Хореографія',
-    src: '/videos/SampleVideo_1280x720_30mb.mp4',
-    poster: '/posters/poster2.png',
+    name: 'Візаж',
+    videos: [
+      { src: '/videos/4778723-uhd_2160_4096_25fps.mp4', poster: '/posters/poster1.png' },
+      { src: '/videos/SampleVideo_1280x720_1mb.mp4', poster: '/posters/poster2.png' },
+      { src: '/videos/13758036_1080_1920_25fps.mp4', poster: '/posters/poster3.png' },
+    ],
   },
   {
-    type: 'Теорія моделінга',
-    src: '/videos/SampleVideo_1280x720_1mb.mp4',
-    poster: '/posters/poster3.png',
+    name: 'Стиль',
+    videos: [
+      { src: '/videos/4778723-uhd_2160_4096_25fps.mp4', poster: '/posters/poster1.png' },
+      { src: '/videos/SampleVideo_1280x720_1mb.mp4', poster: '/posters/poster2.png' },
+      { src: '/videos/13758036_1080_1920_25fps.mp4', poster: '/posters/poster3.png' },
+    ],
   },
   {
-    type: 'Введення TikTok',
-    src: '/videos/4778723-uhd_2160_4096_25fps.mp4',
-    poster: '/posters/poster2.png',
+    name: 'Фотопозування',
+    videos: [
+      { src: '/videos/4778723-uhd_2160_4096_25fps.mp4', poster: '/posters/poster1.png' },
+      { src: '/videos/SampleVideo_1280x720_1mb.mp4', poster: '/posters/poster2.png' },
+      { src: '/videos/13758036_1080_1920_25fps.mp4', poster: '/posters/poster3.png' },
+    ],
   },
   {
-    type: 'Всесвіт моделі',
-    src: '/videos/SampleVideo_1280x720_30mb.mp4',
-    poster: '/posters/poster1.png',
+    name: 'Хореографія',
+    videos: [
+      { src: '/videos/4778723-uhd_2160_4096_25fps.mp4', poster: '/posters/poster1.png' },
+      { src: '/videos/SampleVideo_1280x720_1mb.mp4', poster: '/posters/poster2.png' },
+      { src: '/videos/13758036_1080_1920_25fps.mp4', poster: '/posters/poster3.png' },
+    ],
+  },
+  {
+    name: 'Теорія моделінга',
+    videos: [
+      { src: '/videos/4778723-uhd_2160_4096_25fps.mp4', poster: '/posters/poster1.png' },
+      { src: '/videos/SampleVideo_1280x720_1mb.mp4', poster: '/posters/poster2.png' },
+      { src: '/videos/13758036_1080_1920_25fps.mp4', poster: '/posters/poster3.png' },
+    ],
+  },
+  {
+    name: 'Введення TikTok',
+    videos: [
+      { src: '/videos/4778723-uhd_2160_4096_25fps.mp4', poster: '/posters/poster1.png' },
+      { src: '/videos/SampleVideo_1280x720_1mb.mp4', poster: '/posters/poster2.png' },
+      { src: '/videos/13758036_1080_1920_25fps.mp4', poster: '/posters/poster3.png' },
+    ],
+  },
+  {
+    name: 'Всесвіт моделі',
+    videos: [
+      { src: '/videos/4778723-uhd_2160_4096_25fps.mp4', poster: '/posters/poster1.png' },
+      { src: '/videos/SampleVideo_1280x720_1mb.mp4', poster: '/posters/poster2.png' },
+      { src: '/videos/13758036_1080_1920_25fps.mp4', poster: '/posters/poster3.png' },
+    ],
   },
 ];
