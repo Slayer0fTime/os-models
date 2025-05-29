@@ -191,7 +191,6 @@
   grid-template-columns: repeat(3, minmax(140px, 176px));
   grid-template-rows: repeat(2, 1fr);
   gap: 20px;
-  width: 100%;
 }
 
 .teacher-card {
@@ -977,6 +976,7 @@
 
   .teacher-cards {
     grid-template-columns: repeat(2, 1fr);
+    width: 100%;
   }
 
   .prev-button > svg,
