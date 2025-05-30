@@ -105,6 +105,38 @@
 .programophone-section-side-video {
   object-fit: cover;
   border-radius: 8px;
+  cursor: pointer;
+  background-color: var(--lavanda-5);
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0.6;
+    transform: translateX(-5%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0.6;
+    transform: translateX(5%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.poster-fade-left {
+  animation: fadeInLeft 0.4s ease forwards;
+}
+
+.poster-fade-right {
+  animation: fadeInRight 0.4s ease forwards;
 }
 
 .programophone-section-video-card {
@@ -120,10 +152,21 @@
 }
 
 .video-card-video {
+  /* animation: fadeInUp 0.5s ease both; */
   height: 600px;
   width: 100%;
   border-radius: 8px;
   object-fit: cover;
+  background-color: var(--lavanda-5);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .video-controls {
@@ -157,7 +200,7 @@
   line-height: normal;
 
   fill: var(--lavanda);
-  transition: all 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, fill 0.3s ease-in-out;
 }
 
 .programophone-section-type.selected,

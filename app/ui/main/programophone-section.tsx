@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import styles from './main.module.css';
 import { programophoneSubjects } from '@/app/lib/data/programophone';
 import clsx from 'clsx';
@@ -43,10 +43,15 @@ export default function ProgramophoneSection() {
         <div className={styles['programophone-section-content']}>
           <div className={styles['programophone-section-video']}>
             <Image
+              onClick={handlePrev}
+              key={videos[prevIndex].poster}
               src={videos[prevIndex].poster}
               width={140}
               height={384}
-              className={styles['programophone-section-side-video']}
+              className={clsx(
+                styles['programophone-section-side-video'],
+                styles['poster-fade-right']
+              )}
               alt="Previous poster"
             />
             <div className={styles['programophone-section-video-card']}>
@@ -72,10 +77,15 @@ export default function ProgramophoneSection() {
               </div>
             </div>
             <Image
+              onClick={handleNext}
+              key={videos[nextIndex].poster}
               src={videos[nextIndex].poster}
               width={140}
               height={384}
-              className={styles['programophone-section-side-video']}
+              className={clsx(
+                styles['programophone-section-side-video'],
+                styles['poster-fade-left']
+              )}
               alt="Next poster"
             />
           </div>
