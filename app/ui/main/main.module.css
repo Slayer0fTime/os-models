@@ -507,8 +507,6 @@
 }
 
 .location-map {
-  align-self: stretch;
-  position: relative;
   width: 100%;
   max-width: 700px;
   height: 372px;
@@ -516,7 +514,6 @@
   border: 4px solid var(--lavanda, #9b71b3);
   overflow: hidden;
   transition: transform 0.3s ease;
-  /* aspect-ratio: 16/9; */
 }
 
 .location-map:hover {
