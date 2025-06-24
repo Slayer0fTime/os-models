@@ -70,7 +70,7 @@ export default function Footer() {
         </div>
       </div>
       <span className={styles['copyright']}>
-        © 2024 One Step model academy - Усі права захищено.
+        © 2025 One Step model academy - Усі права захищено.
       </span>
     </footer>
   );

@@ -1,6 +1,6 @@
 export interface ProgramophoneSubject {
   name: string;
-  videos: Array<{ src: string; poster: string }>;
+  videos: { src: string; poster: string }[];
 }
 
 export const programophoneSubjects: ProgramophoneSubject[] = [

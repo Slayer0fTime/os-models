@@ -5,6 +5,7 @@ import TrialLessonSection from './ui/main/trial-lesson';
 import FaqSection from './ui/main/faq';
 import TeachersSection from './ui/main/teachers-section';
 import ProgramophoneSection from './ui/main/programophone-section';
+import LocationSection from './ui/main/location-section';
 
 export default function Page() {
   return (
@@ -18,10 +19,11 @@ export default function Page() {
         </div>
       </div>
       <main className={styles.main}>
-        <ProgramophoneSection/>
+        <ProgramophoneSection />
         <TeachersSection />
         <AchievmentsSection />
         <TrialLessonSection />
+        <LocationSection />
         <FaqSection />
       </main>
     </>
