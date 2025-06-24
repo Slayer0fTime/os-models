@@ -1,27 +1,33 @@
-'use client';
-
 import styles from '@/app/ui/contacts/contacts.module.css';
-// import LocationMap from '@/app/ui/contacts/location-map';
-// import TestGoogleMap from '@/app/ui/contacts/test-google-map';
+import Image from 'next/image';
+import { roboto } from '@/app/ui/fonts';
+import { clsx } from 'clsx';
+import locationImage from '@/public/main/location.png';
 
 export default function Page() {
   return (
     <main className={styles['main']}>
-      <section className={styles['section container']}>
+      <section className={clsx(styles['section'], 'container')}>
         <h2 className={styles['section-title']}>Наші контакти</h2>
         <div className={styles['contacts-section-container']}>
           <div className={styles['location-container']}>
-            {/* <img className={styles['location-map']} src="" alt="map" /> */}
-            {/* <LocationMap /> */}
-
-            {/* <TestGoogleMap /> */}
+            <a
+              className={styles['location-map']}
+              target="_blank"
+              href="https://www.google.com/maps/place/Vasylkivska+St,+34,+Kyiv,+02000/@50.3935707,30.4825893,17z/data=!3m1!4b1!4m6!3m5!1s0x40d4c8daee2e02bd:0x309b0427b63c50c6!8m2!3d50.3935673!4d30.4851696!16s%2Fg%2F11c43wgmfb?entry=ttu&g_ep=EgoyMDI1MDUyNy4wIKXMDSoASAFQAw%3D%3D">
+              <Image
+                src={locationImage}
+                alt="Location"
+                style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+              />
+            </a>
 
             <div className={styles['location-address']}>
               <p>Васильківська вул. 34</p>
               <p>станція м.“Васильківська”</p>
             </div>
           </div>
-          <div className={styles['contacts-info roboto-font']}>
+          <div className={clsx(styles['contacts-info'], roboto.className)}>
             <a href="tel:+380665016032" className={styles['contact-phone-number']}>
               <svg
                 width="20"
@@ -44,7 +50,6 @@ export default function Page() {
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg">
                 <g>
-                  {/*clipPath="url(#clip0_1227_5231)" */}
                   <path
                     d="M20 3.5H2C1.60218 3.5 1.22064 3.65804 0.93934 3.93934C0.658035 4.22064 0.5 4.60218 0.5 5V17C0.5 17.3978 0.658035 17.7794 0.93934 18.0607C1.22064 18.342 1.60218 18.5 2 18.5H20C20.3978 18.5 20.7794 18.342 21.0607 18.0607C21.342 17.7794 21.5 17.3978 21.5 17V5C21.5 4.60218 21.342 4.22064 21.0607 3.93934C20.7794 3.65804 20.3978 3.5 20 3.5ZM18.35 5L11 10.085L3.65 5H18.35ZM2 17V5.6825L10.5725 11.615C10.698 11.7021 10.8472 11.7488 11 11.7488C11.1528 11.7488 11.302 11.7021 11.4275 11.615L20 5.6825V17H2Z"
                     fill="#9B71B3"
