@@ -33,11 +33,14 @@
   border-radius: 8px;
   border: 4px solid var(--lavanda, #9b71b3);
   overflow: hidden;
+}
+
+.location-map > img {
   transition: transform 0.3s ease;
 }
 
-.location-map:hover {
-  transform: scale(1.01);
+.location-map:hover > img {
+  transform: scale(1.05);
 }
 
 .location-address {
