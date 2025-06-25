@@ -26,7 +26,7 @@ export default function Filters() {
     return `${pathname}?${params.toString()}`;
   };
 
-  const getGenderUrl = (genderValue: string | null) => {
+  const getGenderUrl = (genderValue: string) => {
     const params = new URLSearchParams(searchParams);
     if (genderValue === currentGender) {
       params.delete('gender');
