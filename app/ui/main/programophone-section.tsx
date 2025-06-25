@@ -24,6 +24,7 @@ export default function ProgramophoneSection() {
 
   const handlePlayPause = () => {
     const video = videoRef.current;
+    if (!video) return;
 
     if (video.paused) {
       video.play();
