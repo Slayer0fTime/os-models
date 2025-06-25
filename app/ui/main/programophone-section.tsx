@@ -9,6 +9,7 @@ import Image from 'next/image';
 export default function ProgramophoneSection() {
   const [subjectIndex, setSubjectIndex] = useState(0);
   const [videoIndex, setVideoIndex] = useState(0);
+  const [isPlaying, setIsPlaying] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
 
   const currentSubject = programophoneSubjects[subjectIndex];
@@ -19,6 +20,19 @@ export default function ProgramophoneSection() {
   const nextIndex = (videoIndex + 1) % videos.length;
 
   const handlePlay = () => videoRef.current?.play();
+  const handlePause = () => videoRef.current?.pause();
+
+  const handlePlayPause = () => {
+    const video = videoRef.current;
+
+    if (video.paused) {
+      video.play();
+      setIsPlaying(true);
+    } else {
+      video.pause();
+      setIsPlaying(false);
+    }
+  };
 
   const handleSelectSubject = (index: number) => {
     setSubjectIndex(index);
@@ -32,6 +46,10 @@ export default function ProgramophoneSection() {
   const handleNext = () => {
     setVideoIndex(nextIndex);
   };
+
+  useEffect(() => {
+    setIsPlaying(false);
+  }, [videoIndex, subjectIndex]);
 
   return (
     <section className={styles['section']}>
@@ -68,8 +86,8 @@ export default function ProgramophoneSection() {
                 <button onClick={handlePrev}>
                   <PrevIcon />
                 </button>
-                <button onClick={handlePlay}>
-                  <PlayIcon />
+                <button onClick={handlePlayPause}>
+                  {isPlaying ? <PauseIcon /> : <PlayIcon />}
                 </button>
                 <button onClick={handleNext}>
                   <NextIcon />
@@ -144,6 +162,17 @@ function PlayIcon() {
           fill="#78379E"
         />
       </g>
+    </svg>
+  );
+}
+
+function PauseIcon() {
+  return (
+    <svg width="19" height="20" viewBox="0 0 19 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M3.16667 20C4.90833 20 6.33333 18.7143 6.33333 17.1429V2.85714C6.33333 1.28571 4.90833 0 3.16667 0C1.425 0 0 1.28571 0 2.85714V17.1429C0 18.7143 1.425 20 3.16667 20ZM12.6667 2.85714V17.1429C12.6667 18.7143 14.0917 20 15.8333 20C17.575 20 19 18.7143 19 17.1429V2.85714C19 1.28571 17.575 0 15.8333 0C14.0917 0 12.6667 1.28571 12.6667 2.85714Z"
+        fill="#935FB1"
+      />
     </svg>
   );
 }
