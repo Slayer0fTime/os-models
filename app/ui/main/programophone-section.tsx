@@ -50,7 +50,7 @@ export default function ProgramophoneSection() {
 
   useEffect(() => {
     setIsPlaying(false);
-  }, [videoIndex, subjectIndex]);
+  }, [currentVideo.src]);
 
   return (
     <section className={styles['section']}>

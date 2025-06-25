@@ -66,7 +66,7 @@ export default function Filters() {
 
 function AscendingIcon() {
   return (
-    <svg width="9" height="17" viewBox="0 0 9 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg width="9" height="17" viewBox="0 0 9 17" fill="none">
       <path
         fillRule="evenodd"
         clipRule="evenodd"
@@ -79,7 +79,7 @@ function AscendingIcon() {
 
 function DescendingIcon() {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" width="9" height="17" viewBox="0 0 9 17" fill="none">
+    <svg width="9" height="17" viewBox="0 0 9 17" fill="none">
       <path
         fillRule="evenodd"
         clipRule="evenodd"
