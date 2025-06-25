@@ -1,12 +1,14 @@
 'use client';
 
 import styles from '@/app/ui/models/our-models.module.css';
-import { roboto } from '../fonts';
-import { useSearchParams } from 'next/navigation';
+import { usePathname, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import clsx from 'clsx';
+import AgeDropdown from './age-dropdown';
 
 export default function Filters() {
+  const pathname = usePathname();
+
   const filterGenders = [
     { href: 'male', name: 'Хлопчики' },
     { href: 'female', name: 'Дівчата' },
@@ -24,7 +26,7 @@ export default function Filters() {
       params.set('gender', selectedType!);
     }
 
-    return `?${params.toString()}`;
+    return `${pathname}?${params.toString()}`;
   };
 
   return (
@@ -58,11 +60,9 @@ export default function Filters() {
               {gender.name}
             </Link>
           ))}
-          {/* <button className={styles['gender-filter-btn']}>Хлопчики</button>
-          <button className={styles['gender-filter-btn']}>Дівчата</button> */}
         </div>
       </div>
-      <button className={styles['age-category']}>
+      {/* <button className={styles['age-category']}>
         <span>
           <span className={roboto.className}>5 - 8 </span>
           років
@@ -80,7 +80,8 @@ export default function Filters() {
             strokeLinecap="round"
           />
         </svg>
-      </button>
+      </button> */}
+      <AgeDropdown />
     </div>
   );
 }

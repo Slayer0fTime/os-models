@@ -29,9 +29,9 @@ export default async function Page({
             <li>Стегна - {model.hips} см</li>
           </ul>
           <div className={styles['model-photo']}>
-            {model.gallery.map((src, indexed) => (
-              <div className={styles['model-photo-wrapper']}>
-                <Image key={indexed} src={src} alt="model-photo" fill objectFit="cover" />
+            {model.gallery.map((src, index) => (
+              <div  key={index} className={styles['model-photo-wrapper']}>
+                <Image src={src} alt="model-photo" fill objectFit="cover" />
               </div>
             ))}
           </div>

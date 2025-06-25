@@ -75,18 +75,44 @@
   background: var(--lavanda, #9b71b3);
 }
 
+.age-dropdown {
+  position: relative;
+  color: var(--dark-text, #252525);
+  font-size: 20px;
+  font-weight: 300;
+}
+
 .age-category {
   display: flex;
-  align-self: flex-start;
+  /* align-self: flex-start; */
   align-items: center;
   gap: 10px;
   padding: 4px 8px;
   border-bottom: 1px solid var(--lavanda, #9b71b3);
-  color: var(--dark-text, #252525);
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 300;
-  line-height: normal;
+}
+
+.age-dropdown-list {
+  position: absolute;
+  width: 100%;
+  margin-top: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  border-radius: 0px 0px 4px 4px;
+  background-color: #fff;
+  overflow: hidden;
+  /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.age-option {
+  padding: 4px 8px;
+}
+
+.age-option:hover,
+.age-option:focus {
+  background-color: var(--lavanda-5, #e9dfee);
+  outline: none;
 }
 
 .model-cards {
@@ -133,72 +159,74 @@
 
 @media (max-width: 1024px) {
   .main {
-      padding: 60px 0 40px;
+    padding: 60px 0 40px;
   }
   .model-cards {
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
   }
   .model-photo {
-      height: 275px;
+    height: 275px;
   }
   .model-name {
-      font-size: 20px;
+    font-size: 20px;
   }
   .model-details {
-      font-size: 1rem;
+    font-size: 1rem;
   }
 }
 
 @media (max-width: 768px) {
   .main {
-      padding: 50px 0 40px;
+    padding: 50px 0 40px;
   }
-  .age-category {
-      font-size: 1rem;
+
+  .age-dropdown {
+    font-size: 1rem;
   }
   .model-cards {
-      grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
   .model-photo {
-      height: 252px;
+    height: 252px;
   }
 }
 
 @media (max-width: 480px) {
   .main {
-      padding: 28px 0 20px;
+    padding: 28px 0 20px;
   }
   .section-title {
-      font-size: 26px;
-      margin-bottom: 30px;
+    font-size: 26px;
+    margin-bottom: 30px;
   }
   .filter-sidebar {
-      flex-direction: column;
-      align-items: baseline;
+    flex-direction: column;
+    align-items: baseline;
   }
   .sort-by-age-btn {
-      font-size: 14px;
+    font-size: 14px;
   }
   .gender-filter-btn {
-      font-size: 14px;
+    font-size: 14px;
   }
-  .age-category {
-      font-size: 14px;
+  .age-dropdown {
+    align-self: flex-start;
+    font-size: 14px;
   }
   .model-photo {
-      height: 184px;
+    height: 184px;
   }
   .model-name {
-      font-size: 16px;
+    font-size: 16px;
   }
   .model-details {
-      font-size: 14px;
+    font-size: 14px;
   }
 }
 
 @media (max-width: 360px) {
   .main {
-      padding: 20px 0;
+    padding: 20px 0;
   }
 }
