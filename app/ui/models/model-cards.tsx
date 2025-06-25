@@ -13,14 +13,24 @@ export default function ModelCards({ ageGroup }: { ageGroup: keyof ModelsByAgeGr
   }
 
   const searchParams = useSearchParams();
-  const genderFilter = searchParams.get('gender');
-  const filteredModels = genderFilter
-    ? models.filter((model) => model.gender === genderFilter)
-    : models;
+  const gender = searchParams.get('gender');
+  const sort = searchParams.get('sort');
+
+  const filtered = gender ? models.filter((model) => model.gender === gender) : models;
+
+  const sorted = [...filtered].sort((a, b) => {
+    switch (sort) {
+      case 'age-desc':
+        return b.age - a.age;
+      case 'age-asc':
+      default:
+        return a.age - b.age;
+    }
+  });
 
   return (
     <div className={styles['model-cards']}>
-      {filteredModels.map((model, index) => (
+      {sorted.map((model, index) => (
         <Link key={index} href={`/models/${ageGroup}/${model.id}`} className={styles['model-card']}>
           <Image
             src={model.image}
