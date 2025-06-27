@@ -252,7 +252,7 @@ export const modelsByAgeGroup: ModelsByAgeGroup = {
   ],
 };
 
-export function getModelById(ageGroup: string, id: string) {
-  const models = modelsByAgeGroup[ageGroup as keyof typeof modelsByAgeGroup];
+export function getModelById(ageGroup: keyof ModelsByAgeGroup, id: string) {
+  const models = modelsByAgeGroup[ageGroup];
   return models?.find((model) => model.id === id) || null;
 }

@@ -1,4 +1,4 @@
-import { getModelById } from '@/app/lib/data/models';
+import { getModelById, ModelsByAgeGroup } from '@/app/lib/data/models';
 import { notFound } from 'next/navigation';
 import styles from '@/app/ui/models/model-portfolio.module.css';
 import Image from 'next/image';
@@ -6,7 +6,7 @@ import Image from 'next/image';
 export default async function Page({
   params,
 }: {
-  params: Promise<{ ageGroup: string; id: string }>;
+  params: Promise<{ ageGroup: keyof ModelsByAgeGroup; id: string }>;
 }) {
   const { ageGroup, id } = await params;
   const model = getModelById(ageGroup, id);
@@ -30,7 +30,7 @@ export default async function Page({
           </ul>
           <div className={styles['model-photo']}>
             {model.gallery.map((src, index) => (
-              <div  key={index} className={styles['model-photo-wrapper']}>
+              <div key={index} className={styles['model-photo-wrapper']}>
                 <Image src={src} alt="model-photo" fill objectFit="cover" />
               </div>
             ))}
