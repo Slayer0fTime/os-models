@@ -17,8 +17,7 @@ export default function Filters() {
   const currentSort = searchParams.get('sort');
   const currentGender = searchParams.get('gender');
 
-  const isAscending = !currentSort || currentSort === 'age-asc';
-  const nextSort = isAscending ? 'age-desc' : 'age-asc';
+  const isAscending = currentSort !== 'age-desc';
 
   const getSortUrl = (sortValue: string) => {
     const params = new URLSearchParams(searchParams);
