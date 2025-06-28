@@ -376,7 +376,7 @@
 .trial-lesson-event {
   display: flex;
   flex-direction: column;
-  align-items: end;
+  align-items: flex-end;
   gap: 20px;
 }
 
@@ -545,7 +545,7 @@
 .registration-trial-lesson {
   display: flex;
   flex-direction: column;
-  align-items: end;
+  align-items: flex-end;
   gap: 12px;
   /* width: max-content; */
 }
