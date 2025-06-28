@@ -20,7 +20,7 @@ export default function EventCards() {
   return (
     <div className={styles['event-grid']}>
       {filteredEvents.map((event) => (
-        <Link href={`events/${event.id}`} className={styles['event-card']}>
+        <Link key={event.id} href={`events/${event.id}`} className={styles['event-card']}>
           <div className={styles['event-photo-wrapper']}>
             <Image
               src={event.image}
