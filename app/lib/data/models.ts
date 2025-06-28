@@ -16,7 +16,7 @@ export const ageGroups = [
   },
 ];
 
-interface Model {
+export interface Model {
   id: string;
   name: string;
   age: number;

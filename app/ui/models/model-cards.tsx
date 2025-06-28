@@ -1,17 +1,12 @@
 'use client';
 
-import { notFound, useSearchParams } from 'next/navigation';
-import { modelsByAgeGroup, ModelsByAgeGroup } from '@/app/lib/data/models';
+import { useSearchParams } from 'next/navigation';
+import { Model } from '@/app/lib/data/models';
 import styles from './our-models.module.css';
 import Link from 'next/link';
 import Image from 'next/image';
 
-export default function ModelCards({ ageGroup }: { ageGroup: keyof ModelsByAgeGroup }) {
-  const models = modelsByAgeGroup[ageGroup];
-  if (!models) {
-    return notFound();
-  }
-
+export default function ModelCards({ models, ageGroup }: { models: Model[]; ageGroup: string }) {
   const searchParams = useSearchParams();
   const gender = searchParams.get('gender');
   const sort = searchParams.get('sort');
