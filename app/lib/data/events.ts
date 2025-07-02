@@ -6,7 +6,7 @@ export const events = [
     shortDescription: 'Сьогодні був наш 5 показ, в якому брали участь усі вікові групи',
     description:
       'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sequi molestias sed deleniti? Modi cumque facere inventore libero sed ab. Ipsum!',
-    date: '2024-02-09',
+    date: '2023-02-09',
     type: 'shows',
     gallery: [
       '/events/event1.png',
@@ -26,7 +26,7 @@ export const events = [
     shortDescription: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. In, ducimus!',
     description:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam placeat saepe ducimus cum molestias. Aspernatur nulla pariatur, voluptatum nobis sapiente commodi quae sunt quidem voluptate, distinctio architecto molestiae repellat minus culpa iste ab dolor ad consequuntur dolore. Quidem, perferendis. Architecto.',
-    date: '2025-01-01',
+    date: '2025-02-01',
     type: 'photo-projects',
     gallery: [
       '/events/event2.png',
@@ -46,7 +46,7 @@ export const events = [
     shortDescription: 'Lorem ipsum dolor sit amet.',
     description:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam placeat saepe ducimus cum molestias. Aspernatur nulla pariatur, voluptatum nobis sapiente commodi quae sunt quidem voluptate, distinctio architecto molestiae repellat minus culpa iste ab dolor ad consequuntur dolore. Quidem, perferendis. Architecto.',
-    date: '2024-02-09',
+    date: '2025-01-20',
     type: 'shows',
     gallery: [
       '/events/event3.png',
@@ -65,7 +65,7 @@ export const events = [
     title: 'Веснянний показ',
     shortDescription: 'Сьогодні був наш 5 показ, в якому брали участь усі вікові групи',
     description: '',
-    date: '2024-02-09',
+    date: '2020-02-09',
     type: 'shows',
   },
   {
@@ -74,7 +74,7 @@ export const events = [
     title: 'Веснянний показ',
     shortDescription: 'Сьогодні був наш 5 показ, в якому брали участь усі вікові групи',
     description: '',
-    date: '2024-02-09',
+    date: '2020-02-09',
     type: 'shows',
   },
   {
@@ -83,7 +83,7 @@ export const events = [
     title: 'Веснянний показ',
     shortDescription: 'Сьогодні був наш 5 показ, в якому брали участь усі вікові групи',
     description: '',
-    date: '2024-02-09',
+    date: '2020-02-09',
     type: 'shows',
   },
   {
@@ -92,7 +92,7 @@ export const events = [
     title: 'Веснянний показ',
     shortDescription: 'Сьогодні був наш 5 показ, в якому брали участь усі вікові групи',
     description: '',
-    date: '2024-02-09',
+    date: '2020-02-09',
     type: 'shows',
   },
   {
@@ -101,7 +101,7 @@ export const events = [
     title: 'Веснянний показ',
     shortDescription: 'Сьогодні був наш 5 показ, в якому брали участь усі вікові групи',
     description: '',
-    date: '2024-02-09',
+    date: '2020-02-09',
     type: 'shows',
   },
 ];

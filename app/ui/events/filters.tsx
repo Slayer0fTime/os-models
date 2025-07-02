@@ -2,56 +2,56 @@
 
 import styles from '@/app/ui/events/events.module.css';
 import Link from 'next/link';
-import { useSearchParams } from 'next/navigation';
+import { usePathname, useSearchParams } from 'next/navigation';
 import clsx from 'clsx';
+import AscendingIcon from '@/app/ui/icons/ascending-icon';
+import DescendingIcon from '@/app/ui/icons/descending-icon';
+
+const eventTypes = [
+  { href: 'shows', name: 'Покази' },
+  { href: 'photo-projects', name: 'Фотопроекти' },
+];
 
 export default function Filters() {
-  const filterTypes = [
-    { href: 'shows', name: 'Покази' },
-    { href: 'photo-projects', name: 'Фотопроекти' },
-  ];
-
+  const pathname = usePathname();
   const searchParams = useSearchParams();
+
+  const currentOrder = searchParams.get('order');
   const currentType = searchParams.get('type');
+  const isNewestFirst = currentOrder !== 'oldest';
 
-  const getUpdatedQuery = (selectedType: string | null) => {
+  const getOrderUrl = (orderValue: string) => {
     const params = new URLSearchParams(searchParams);
+    params.set('order', orderValue);
+    return `${pathname}?${params.toString()}`;
+  };
 
+  const getTypeUrl = (selectedType: string) => {
+    const params = new URLSearchParams(searchParams);
     if (selectedType === currentType) {
       params.delete('type');
     } else {
       params.set('type', selectedType!);
     }
-
-    return `?${params.toString()}`;
+    return `${pathname}?${params.toString()}`;
   };
 
   return (
     <div className={styles['filters']}>
-      <button className={styles['sort-by-date-button']}>
+      <Link
+        className={styles['sort-by-date-button']}
+        href={getOrderUrl(isNewestFirst ? 'oldest' : 'newest')}>
         Дата публікації
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="9"
-          height="17"
-          viewBox="0 0 9 17"
-          fill="none">
-          <path
-            fillRule="evenodd"
-            clipRule="evenodd"
-            d="M4.5 -3.93403e-07C4.36741 -4.04994e-07 4.24025 0.0639606 4.1465 0.177816C4.05274 0.291669 4.00007 0.446088 4.00007 0.607103L4.00007 14.9263L0.854511 11.1051C0.760637 10.9911 0.633317 10.9271 0.50056 10.9271C0.367803 10.9271 0.240483 10.9911 0.14661 11.1051C0.0527358 11.2191 -1.41549e-06 11.3738 -1.42958e-06 11.535C-1.44368e-06 11.6962 0.0527358 11.8508 0.14661 11.9648L4.14605 16.8216C4.19249 16.8782 4.24766 16.923 4.30839 16.9536C4.36913 16.9842 4.43424 17 4.5 17C4.56576 17 4.63087 16.9842 4.69161 16.9536C4.75234 16.923 4.80751 16.8782 4.85395 16.8216L8.85339 11.9648C8.89987 11.9084 8.93674 11.8414 8.9619 11.7676C8.98705 11.6939 9 11.6148 9 11.535C9 11.3738 8.94726 11.2191 8.85339 11.1051C8.75952 10.9911 8.6322 10.9271 8.49944 10.9271C8.36668 10.9271 8.23936 10.9911 8.14549 11.1051L4.99993 14.9263L4.99993 0.607103C4.99993 0.446088 4.94726 0.291669 4.8535 0.177816C4.75975 0.0639607 4.63259 -3.81811e-07 4.5 -3.93403e-07Z"
-            fill="#9B71B3"
-          />
-        </svg>
-      </button>
+        {isNewestFirst ? <DescendingIcon /> : <AscendingIcon />}
+      </Link>
       <div className={styles['filter-event-type']}>
-        {filterTypes.map((type, index) => (
+        {eventTypes.map((type, index) => (
           <Link
             key={index}
             className={clsx(styles['event-type-btn'], {
               [styles.active]: type.href === currentType,
             })}
-            href={getUpdatedQuery(type.href)}>
+            href={getTypeUrl(type.href)}>
             {type.name}
           </Link>
         ))}

@@ -9,17 +9,17 @@ import { useSearchParams } from 'next/navigation';
 
 export default function EventCards() {
   const searchParams = useSearchParams();
-  const typeFilter = searchParams.get('type');
-  // const sortByDate = searchParams.get('sort') === 'date';
+  const type = searchParams.get('type');
+  const order = searchParams.get('order');
 
-  const filteredEvents = events.filter((event) => {
-    if (!typeFilter) return true;
-    return event.type === typeFilter;
-  });
+  const preparedEvents = events
+    .filter((event) => !type || event.type === type)
+    .sort((a, b) => b.date.localeCompare(a.date));
+  if (order === 'oldest') preparedEvents.reverse();
 
   return (
     <div className={styles['event-grid']}>
-      {filteredEvents.map((event) => (
+      {preparedEvents.map((event) => (
         <Link key={event.id} href={`events/${event.id}`} className={styles['event-card']}>
           <div className={styles['event-photo-wrapper']}>
             <Image
