@@ -617,6 +617,26 @@
   gap: 1rem;
 }
 
+/*TODO add adaptation*/
+.timestamp-selects {
+  display: flex;
+  gap: 1rem;
+}
+
+.timestamp-selects > select {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 12px;
+  border-bottom: 1px solid #000;
+  color: var(--dark-text, #252525);
+  font-family: 'Roboto';
+  font-size: 14px;
+  font-weight: 300;
+}
+/**/
+
 .timestamp-buttons > button {
   display: flex;
   justify-content: space-between;
