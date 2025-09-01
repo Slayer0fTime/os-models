@@ -7,24 +7,25 @@ import Image from 'next/image';
 
 export function TeacherSlider() {
   const [page, setPage] = useState(0);
-  const [cardsPerPage, setCardsPerPage] = useState(0);
+  const [cardsPerPage, setCardsPerPage] = useState<number | null>(null);
 
   useEffect(() => {
     const mediaQuery = window.matchMedia('(max-width: 480px)');
 
-    const updateCardsPerPage = (e: MediaQueryList | MediaQueryListEvent) => {
-      setCardsPerPage(e.matches ? 4 : 6);
+    const handleResize = () => {
+      setCardsPerPage(mediaQuery.matches ? 4 : 6);
       setPage(0);
     };
 
-    updateCardsPerPage(mediaQuery);
-    mediaQuery.addEventListener('change', updateCardsPerPage);
-    return () => {
-      mediaQuery.removeEventListener('change', updateCardsPerPage);
-    };
+    handleResize();
+    mediaQuery.addEventListener('change', handleResize);
+    return () => mediaQuery.removeEventListener('change', handleResize);
   }, []);
 
+  if (!cardsPerPage) return;
+
   const totalPages = Math.ceil(teachers.length / cardsPerPage);
+  const currentTeachers = teachers.slice(page * cardsPerPage, (page + 1) * cardsPerPage);
 
   const handlePrev = () => {
     if (page > 0) setPage(page - 1);
@@ -33,8 +34,6 @@ export function TeacherSlider() {
   const handleNext = () => {
     if (page < totalPages - 1) setPage(page + 1);
   };
-
-  const currentTeachers = teachers.slice(page * cardsPerPage, page * cardsPerPage + cardsPerPage);
 
   return (
     <div className={styles['teacher-cards-wrapper']}>
