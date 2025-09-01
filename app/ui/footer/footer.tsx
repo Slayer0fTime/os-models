@@ -1,5 +1,6 @@
 import clsx from 'clsx';
 import styles from './footer.module.css';
+import { contactInfo } from '@/app/lib/data/contacts';
 
 export default function Footer() {
   return (
@@ -17,8 +18,8 @@ export default function Footer() {
               fill="#9B71B3"
             />
           </svg>
-          <a href="tel:+380665016032">+380665016032</a>
-          <p className={styles['opening-hours']}>Пн - Нед: 10.00 - 18.00</p>
+          <a href={`tel:${contactInfo.phone}`}>{contactInfo.phone}</a>
+          <p className={styles['working-hours']}>{contactInfo.workingHours}</p>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -30,10 +31,10 @@ export default function Footer() {
               fill="#9B71B3"
             />
           </svg>
-          <a href="mailto:danilnikonenko04@gmail.com">danilnikonenko04@gmail.com</a>
+          <a href={`mailto:${contactInfo.email}`}>{contactInfo.email}</a>
         </div>
         <div className={styles['contact-icons']}>
-          <a href="#">
+          <a href={contactInfo.instagram} target='_blank'>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="27"
@@ -54,7 +55,7 @@ export default function Footer() {
             </svg>
           </a>
 
-          <a href="#">
+          <a href={contactInfo.tiktok} target='_blank'>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="26"

@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { roboto } from '@/app/ui/fonts';
 import { clsx } from 'clsx';
 import locationImage from '@/public/main/location.png';
+import { contactInfo } from '@/app/lib/data/contacts';
 
 export default function Page() {
   return (
@@ -40,7 +41,7 @@ export default function Page() {
                   fill="#252525"
                 />
               </svg>
-              +380665016032
+              {contactInfo.phone}
             </a>
             <a href="mailto:danilnikonenko04@gmail.com" className={styles['contact-email']}>
               <svg
@@ -61,7 +62,7 @@ export default function Page() {
                   </clipPath>
                 </defs>
               </svg>
-              danilnikonenko04@gmail.com
+              {contactInfo.email}
             </a>
           </div>
         </div>
