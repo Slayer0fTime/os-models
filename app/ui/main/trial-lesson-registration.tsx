@@ -1,59 +1,168 @@
-import { roboto } from '../fonts';
-import styles from './main.module.css';
+"use client";
+
+import {useEffect, useMemo, useState} from "react";
+import useSWR from "swr";
+import {roboto} from "../fonts";
+import styles from "./main.module.css";
+
+interface Slot { city: string; date: string; time: string; }
+
+const fetcher = (url: string) => fetch(url).then((r) => r.json());
 
 export default function TrialLessonRegistrationSection() {
+  const { data, error, isLoading, isValidating, mutate } = useSWR<Slot[]>("/api/slots", fetcher, {
+    refreshInterval: 60_000,
+    revalidateOnFocus: false,
+  });
+
+  const slots = useMemo(() => Array.isArray(data) ? data : [], [data]);
+  const noSlots = !isLoading && !error && slots.length === 0;
+
+  const [modelName, setModelName] = useState("");
+  const [modelAge, setModelAge] = useState("");
+  const [modelSurname, setModelSurname] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+
+  const [selectedCity, setSelectedCity] = useState("");
+  const [selectedDate, setSelectedDate] = useState("");
+  const [selectedTime, setSelectedTime] = useState("");
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formMessage, setFormMessage] = useState<{ type: 'success' | 'error'; text: string } | null>(null);
+
+  const cities = useMemo(
+    () => Array.from(new Set(slots.map((s) => s.city))),
+    [slots]
+  );
+  const dates = useMemo(
+    () => Array.from(new Set(slots.filter((s) => s.city === selectedCity).map((s) => s.date))),
+    [slots, selectedCity]
+  );
+  const times = useMemo(
+    () => Array.from(new Set(slots.filter((s) => s.city === selectedCity && s.date === selectedDate).map((s) => s.time))),
+    [slots, selectedCity, selectedDate]
+  );
+
+  useEffect(() => {
+    if (!cities.includes(selectedCity) && cities.length > 0) {
+      setSelectedCity(cities[0]);
+    }
+  }, [cities, selectedCity]);
+  useEffect(() => {
+    if (!dates.includes(selectedDate)) {
+      setSelectedDate(dates[0] || "");
+    }
+  }, [dates, selectedDate]);
+  useEffect(() => {
+    if (!times.includes(selectedTime)) {
+      setSelectedTime(times[0] || "");
+    }
+  }, [times, selectedTime]);
+
+  const phoneRegex = /^\+?[0-9]{7,15}$/; // Simple regex checking (E.164 like)
+
+  async function handleRegistration(e: React.FormEvent) {
+    e.preventDefault();
+    setFormMessage(null);
+
+    if (!selectedCity || !selectedDate || !selectedTime) {
+      setFormMessage({ type: 'error', text: "Будь ласка, оберіть місто, дату та час." });
+      return;
+    }
+    if (!modelName || !modelAge || !modelSurname || !phoneRegex.test(phoneNumber)) {
+      setFormMessage({ type: 'error', text: "Будь ласка, заповніть всі поля коректно." });
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      const res = await fetch("/api/register", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          modelName, modelAge, modelSurname, phoneNumber,
+          city: selectedCity, date: selectedDate, time: selectedTime,
+        }),
+      });
+
+      const result = await res.json();
+
+      if (!res.ok) {
+        throw new Error(result.error || "Failed to register for trial lesson");
+      }
+
+      setFormMessage({ type: 'success', text: "Ви успішно записані на пробне заняття!" });
+
+      setModelName("");
+      setModelAge("");
+      setModelSurname("");
+      setPhoneNumber("");
+    } catch (err: any) {
+        console.error(err);
+        setFormMessage({ type: 'error', text: err.message || "Сталася помилка при записі. Спробуйте ще раз." });
+    } finally {
+        setIsSubmitting(false);
+        await mutate();
+    }
+  }
+
   return (
-    <section className={styles['section']}>
-      <div className={styles['registration-trial-lesson-container']}>
-        <div className={styles['registration-trial-lesson']}>
-          <div className={styles['registration-trial-lesson-card']}>
-            <div className={styles['registration-trial-lesson-card-header']}>
+    <section className={styles.section}>
+      <div className={styles["registration-trial-lesson-container"]}>
+        <div className={styles["registration-trial-lesson"]}>
+          <div className={styles["registration-trial-lesson-card"]}>
+            <div className={styles["registration-trial-lesson-card-header"]}>
               <h3>Запишись на пробне заняття</h3>
               <b>Безкоштовно</b>
             </div>
-            <div className={styles['registration-trial-lesson-card-model-info']}>
-              <input type="text" placeholder="Ім'я моделі" />
-              <input type="text" placeholder="Вік моделі" />
-              <input type="text" placeholder="Прізвище моделі" />
-              <input type="tel" placeholder="Номер телефону" />
-              <p className={styles['registration-trial-lesson-card-timestamp']}>
-                Оберіть дату та час заняття:
-              </p>
-              <div className={styles['timestamp-buttons']}>
-                <button>
-                  <span>05.01.2024</span>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="9"
-                    height="8"
-                    viewBox="0 0 9 8"
-                    fill="none">
-                    <path
-                      d="M4.84641 6.9C4.69245 7.16667 4.30755 7.16667 4.15359 6.9L0.949295 1.35C0.795334 1.08333 0.987785 0.75 1.29571 0.75L7.70429 0.750001C8.01222 0.750001 8.20466 1.08333 8.0507 1.35L4.84641 6.9Z"
-                      fill="#252525"
-                    />
-                  </svg>
-                </button>
-                <button>
-                  <span>12:00 - 16:00</span>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="9"
-                    height="8"
-                    viewBox="0 0 9 8"
-                    fill="none">
-                    <path
-                      d="M4.84641 6.9C4.69245 7.16667 4.30755 7.16667 4.15359 6.9L0.949295 1.35C0.795334 1.08333 0.987785 0.75 1.29571 0.75L7.70429 0.750001C8.01222 0.750001 8.20466 1.08333 8.0507 1.35L4.84641 6.9Z"
-                      fill="#252525"
-                    />
-                  </svg>
-                </button>
-              </div>
-            </div>
-          </div>
-          <button className={styles['registration-trial-lesson-button']}>Записатись</button>
-        </div>
 
+            {isLoading ? (
+              <p>Завантаження…</p>
+            ) : error ? (
+              <p className={styles["no-slots-message"]}>Не вдалося завантажити слоти. Спробуйте пізніше.</p>
+            ) : noSlots ? (
+              <p className={styles["no-slots-message"]}>
+                На жаль, наразі відсутні вільні місця. Слідкуйте за оновленнями розкладу або зв’яжіться з адміном.
+              </p>
+            ) : (
+              <form onSubmit={handleRegistration} className={styles["registration-trial-lesson-card-model-info"]}>
+                <InputField value={modelName} onChange={setModelName} placeholder="Ім'я моделі" />
+                <InputField value={modelAge} onChange={setModelAge} placeholder="Вік моделі" />
+                <InputField value={modelSurname} onChange={setModelSurname} placeholder="Прізвище моделі" />
+                <InputField value={phoneNumber} onChange={setPhoneNumber} placeholder="Номер телефону" type="tel" />
+
+                <p className={styles["registration-trial-lesson-card-timestamp"]}>
+                  Оберіть дату та час заняття:
+                </p>
+
+                <div className={styles["timestamp-selects"]}>
+                  <SelectField value={selectedCity} onChange={setSelectedCity} options={cities} ariaLabel="Місто" />
+                  {dates.length > 0 && (
+                    <SelectField value={selectedDate} onChange={setSelectedDate} options={dates} ariaLabel="Дата" />
+                  )}
+                  {times.length > 0 && (
+                    <SelectField value={selectedTime} onChange={setSelectedTime} options={times} ariaLabel="Час" />
+                  )}
+                </div>
+
+                {formMessage && (
+                  <p className={`mt-4 text-center font-semibold ${formMessage.type === 'success' ? 'text-green-600' : 'text-red-600'}`}>
+                    {formMessage.text}
+                  </p>
+                )}
+
+                <button
+                  className={styles["registration-trial-lesson-button"]}
+                  disabled={!selectedCity || !selectedDate || !selectedTime || isValidating}
+                  type="submit"
+                >
+                  {isSubmitting ? "Записуємо..." : (isValidating ? "Оновлюємо…" : "Записатись")}
+                </button>
+              </form>
+            )}
+          </div>
+        </div>
         <div className={styles['trial-lesson-price-container']}>
           <div className={styles['trial-lesson-price-cards']}>
             <PaymentCard months={3} originalPrice="12 000" discountPrice="8 600" discount={15} />
@@ -102,5 +211,21 @@ function PaymentCard({
         </strong>
       </div>
     </div>
+  );
+}
+
+function SelectField({ value, onChange, options, ariaLabel }: { value: string; onChange: (v: string) => void; options: string[]; ariaLabel: string; }) {
+  return (
+    <select value={value} onChange={(e) => onChange(e.target.value)} aria-label={ariaLabel}>
+      {options.map((opt) => (
+          <option key={opt} value={opt}>{opt}</option>
+      ))}
+    </select>
+  );
+}
+
+function InputField({ value, onChange, placeholder, type = "text" }: { value: string; onChange: (v: string) => void; placeholder: string; type?: string; }) {
+  return (
+    <input value={value} onChange={(e) => onChange(e.target.value)} placeholder={placeholder} type={type} />
   );
 }
