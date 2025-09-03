@@ -4,6 +4,7 @@ import { roboto } from '@/app/ui/fonts';
 import { clsx } from 'clsx';
 import locationImage from '@/public/main/location.png';
 import { contactInfo } from '@/app/lib/data/contacts';
+import Location from '@/app/ui/location';
 
 export default function Page() {
   return (
@@ -11,25 +12,9 @@ export default function Page() {
       <section className={clsx(styles['section'], 'container')}>
         <h2 className={styles['section-title']}>Наші контакти</h2>
         <div className={styles['contacts-section-container']}>
-          <div className={styles['location-container']}>
-            <a
-              className={styles['location-map']}
-              target="_blank"
-              href="https://www.google.com/maps/place/Vasylkivska+St,+34,+Kyiv,+02000/@50.3935707,30.4825893,17z/data=!3m1!4b1!4m6!3m5!1s0x40d4c8daee2e02bd:0x309b0427b63c50c6!8m2!3d50.3935673!4d30.4851696!16s%2Fg%2F11c43wgmfb?entry=ttu&g_ep=EgoyMDI1MDUyNy4wIKXMDSoASAFQAw%3D%3D">
-              <Image
-                src={locationImage}
-                alt="Location"
-                style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-              />
-            </a>
-
-            <div className={styles['location-address']}>
-              <p>Васильківська вул. 34</p>
-              <p>станція м.“Васильківська”</p>
-            </div>
-          </div>
+          <Location />
           <div className={clsx(styles['contacts-info'], roboto.className)}>
-            <a href="tel:+380665016032" className={styles['contact-phone-number']}>
+            <a href={`tel:${contactInfo.phone}`} className={styles['contact-phone-number']}>
               <svg
                 width="20"
                 height="20"
@@ -43,7 +28,7 @@ export default function Page() {
               </svg>
               {contactInfo.phone}
             </a>
-            <a href="mailto:danilnikonenko04@gmail.com" className={styles['contact-email']}>
+            <a href={`mailto:${contactInfo.email}`} className={styles['contact-email']}>
               <svg
                 width="24"
                 height="24"
